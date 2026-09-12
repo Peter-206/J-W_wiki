@@ -1,0 +1,971 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ultimate JEI Item Browser, Recipe Encyclopedia & Master Field Guide for Minecraft 1.20.1 Forge/NeoForge.">
+  <link rel="icon" href="modpack_field_guide.ico" type="image/x-icon">
+  <title>Modpack Field Guide & JEI Encyclopedia | Minecraft 1.20.1</title>
+  <link rel="stylesheet" href="assets/restored-wiki.css">
+  <script src="scripts/restored_jei_database.js"></script>
+</head>
+<body>
+
+<div class="app-layout">
+  <!-- Sidebar Navigation -->
+  <aside class="sidebar">
+    <div class="brand" id="brandHomeBtn">
+      <div class="brand-icon">⚔</div>
+      <div class="brand-text">
+        <h1>Field Guide</h1>
+        <small>Minecraft 1.20.1 Forge</small>
+      </div>
+    </div>
+    
+    <div class="nav-group">
+      <div class="nav-label">Main Navigation</div>
+      <button class="nav-btn active" data-view="home-view">
+        <span>🏠 Field Station Home</span>
+      </button>
+      <button class="nav-btn" data-view="jei-view">
+        <span>📦 JEI Item & Recipe Explorer</span>
+        <span class="badge" id="sideItemCount">140+</span>
+      </button>
+      <button class="nav-btn" data-view="progression-view">
+        <span>🧭 Progression Path</span>
+      </button>
+      <button class="nav-btn" data-view="bosses-view">
+        <span>🐉 Boss Bestiary</span>
+      </button>
+      <button class="nav-btn" data-view="systems-view">
+        <span>⚙️ Magic & Tech Systems</span>
+      </button>
+      <button class="nav-btn" data-view="dimensions-view">
+        <span>🌌 Dimensions & Biomes</span>
+      </button>
+      <button class="nav-btn" data-view="hotkeys-view">
+        <span>⌨️ Hotkeys & Keybinds</span>
+      </button>
+      <button class="nav-btn" data-view="checklist-view">
+        <span>🏆 Pack Conquest Tracker</span>
+      </button>
+      <button class="nav-btn" data-view="mods-view">
+        <span>📚 Mod Technical Index</span>
+        <span class="badge">43</span>
+      </button>
+    </div>
+    
+    <a class="nav-btn" href="tools.html#catalog">Texture catalog &amp; saved tools</a><div class="sidebar-footer">
+      <div class="progress-pill">
+        <div style="display:flex; justify-content:space-between; font-size:0.75rem;">
+          <span style="color:var(--text-dim); font-weight:700;">Pack Completion</span>
+          <span id="sideProgressText" style="color:var(--lime); font-weight:800;">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="sideProgressBar"></div>
+        </div>
+      </div>
+      <p style="margin-top:10px;"><strong>100% Offline Wiki</strong><br>Instant item recipes, boss strategies, and mechanical guides.</p>
+    </div>
+  </aside>
+
+  <!-- Main Content Shell -->
+  <main class="main-content">
+    
+    <!-- ========================================== -->
+    <!-- VIEW 0: TRUE HOME PAGE (FIELD STATION HUB) -->
+    <!-- ========================================== -->
+    <section id="home-view" class="wiki-view active">
+      <!-- Top Hero Header -->
+      <header class="hero">
+        <div>
+          <h1 class="hero-title">Modpack Field Station</h1>
+          <p class="hero-subtitle">Your central command center for the 1.20.1 Forge modpack. Search any item for its crafting recipes, consult tactical boss bestiaries, and conquer kinetic engineering and arcane magic.</p>
+          <div class="hero-badges">
+            <span class="hero-badge lime">● Minecraft 1.20.1 Forge</span>
+            <span class="hero-badge gold">● 140+ Integrated JEI Items</span>
+            <span class="hero-badge cyan">● 10 Major Boss Encounters</span>
+            <span class="hero-badge">● Instant Recipe Viewer (R/U)</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Global Quick Search (Items & Mechanics) -->
+      <div class="search-section">
+        <div class="search-box-wrapper">
+          <span class="search-icon-left">🔍</span>
+          <input type="search" id="homeSearchInput" class="search-input" placeholder="Search any item (e.g. 'incinerator', 'dragon forge', 'water wheel', 'spellbook', '@create')..." autocomplete="off">
+          <span class="search-shortcut">/</span>
+        </div>
+        <div class="search-hints">
+          <span>JEI Search Prefixes:</span>
+          <span><code>@mod</code> e.g. <code>@create</code>, <code>@aether</code></span>
+          <span><code>#tag</code> e.g. <code>#weapon</code>, <code>#magic</code>, <code>#food</code>, <code>#boss_drop</code></span>
+          <span>Press <span class="kbd">Enter</span> to open JEI Explorer</span>
+        </div>
+      </div>
+
+      <!-- Command Portals Grid -->
+      <div class="home-portal-grid">
+        <!-- JEI Explorer Portal -->
+        <article class="portal-card" style="--card-accent: var(--lime);" onclick="navigateTo('jei-view')">
+          <div class="portal-head">
+            <div class="portal-icon">📦</div>
+            <div class="portal-title-group">
+              <h3>JEI Item & Recipe Explorer</h3>
+              <small>Just Enough Items Engine</small>
+            </div>
+          </div>
+          <p class="portal-desc">Browse 140+ modded items with full 3x3 crafting grids, Tinkers' smeltery casting recipes, Farmer's Delight cooking pots, and spell forging.</p>
+          <div class="portal-tags">
+            <span class="portal-tag">Press R for Recipe</span>
+            <span class="portal-tag">Press U for Uses</span>
+            <span class="portal-tag">Bookmarks (A)</span>
+          </div>
+          <div class="portal-btn">Launch JEI Browser →</div>
+        </article>
+
+        <!-- Boss Bestiary Portal -->
+        <article class="portal-card" style="--card-accent: var(--red);" onclick="navigateTo('bosses-view')">
+          <div class="portal-head">
+            <div class="portal-icon">🐉</div>
+            <div class="portal-title-group">
+              <h3>Boss Bestiary & Tactics</h3>
+              <small>Cataclysm, Dragons & Aether</small>
+            </div>
+          </div>
+          <p class="portal-desc">Detailed tactical combat breakdowns for Netherite Monstrosity, Ignis, Stage 5 Elder Dragons, The Dead King, and Void Worm.</p>
+          <div class="portal-tags">
+            <span class="portal-tag">10 Boss Guides</span>
+            <span class="portal-tag">Weaknesses</span>
+            <span class="portal-tag">Legendary Drops</span>
+          </div>
+          <div class="portal-btn">View Boss Combat Tactics →</div>
+        </article>
+
+        <!-- Progression Roadmap Portal -->
+        <article class="portal-card" style="--card-accent: var(--gold);" onclick="navigateTo('progression-view')">
+          <div class="portal-head">
+            <div class="portal-icon">🧭</div>
+            <div class="portal-title-group">
+              <h3>Master Progression Path</h3>
+              <small>Survival to Endgame</small>
+            </div>
+          </div>
+          <p class="portal-desc">Step-by-step master walkthrough guiding you from Day 1 survival, Tinkers' tool forging, Create kinetic networks, to The Otherside sculk realm.</p>
+          <div class="portal-tags">
+            <span class="portal-tag">5 Stages</span>
+            <span class="portal-tag">Milestones</span>
+            <span class="portal-tag">Gear Unlocks</span>
+          </div>
+          <div class="portal-btn">View Progression Roadmap →</div>
+        </article>
+
+        <!-- Magic & Tech Engineering -->
+        <article class="portal-card" style="--card-accent: var(--cyan);" onclick="navigateTo('systems-view')">
+          <div class="portal-head">
+            <div class="portal-icon">⚙️</div>
+            <div class="portal-title-group">
+              <h3>Magic & Tech Systems</h3>
+              <small>Kinematics & Sorcery</small>
+            </div>
+          </div>
+          <p class="portal-desc">Smeltery alloy blueprints, Create rotational speed gear shifting ratios, 10 Iron's Spells magic schools, and Hexerei broom brewing.</p>
+          <div class="portal-tags">
+            <span class="portal-tag">Tinkers' Alloys</span>
+            <span class="portal-tag">Create SU/RPM</span>
+            <span class="portal-tag">Spell Schools</span>
+          </div>
+          <div class="portal-btn">Open Engineering Guide →</div>
+        </article>
+
+        <!-- Dimensions & Biomes -->
+        <article class="portal-card" style="--card-accent: var(--purple);" onclick="navigateTo('dimensions-view')">
+          <div class="portal-head">
+            <div class="portal-icon">🌌</div>
+            <div class="portal-title-group">
+              <h3>Dimensions & Biomes</h3>
+              <small>Aether, Otherside & Terralith</small>
+            </div>
+          </div>
+          <p class="portal-desc">Portal activation guides, sky island navigation in The Aether, Ancient City Heart of the Deep activation, and Terralith biomes.</p>
+          <div class="portal-tags">
+            <span class="portal-tag">Glowstone Portal</span>
+            <span class="portal-tag">Sculk Realm</span>
+            <span class="portal-tag">85+ Biomes</span>
+          </div>
+          <div class="portal-btn">Explore Dimensions →</div>
+        </article>
+
+        <!-- Hotkeys & Keybinds -->
+        <article class="portal-card" style="--card-accent: var(--blue);" onclick="navigateTo('hotkeys-view')">
+          <div class="portal-head">
+            <div class="portal-icon">⌨️</div>
+            <div class="portal-title-group">
+              <h3>Hotkeys & Keybinds</h3>
+              <small>Controls Quick-Sheet</small>
+            </div>
+          </div>
+          <p class="portal-desc">Essential shortcuts for JEI recipe queries (R/U), JourneyMap waypoints, Corpse death recovery GUI, and Spellbook wheels.</p>
+          <div class="portal-tags">
+            <span class="portal-tag">R / U (JEI)</span>
+            <span class="portal-tag">J / B (Map)</span>
+            <span class="portal-tag">U (Corpse)</span>
+          </div>
+          <div class="portal-btn">View Hotkey Cheat Sheet →</div>
+        </article>
+      </div>
+
+      <!-- Spotlight Top Items Section -->
+      <div style="margin-top: 10px;">
+        <h3 class="home-section-title">⭐ Iconic Modpack Gear & Spotlight Items</h3>
+        <p class="home-section-sub">Click any item below to immediately view its interactive crafting matrix, alloy requirements, and mechanics!</p>
+        <div class="spotlight-grid" id="spotlightGrid"></div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 1: JEI ITEM & RECIPE EXPLORER         -->
+    <!-- ========================================== -->
+    <section id="jei-view" class="wiki-view">
+      <!-- JEI Top Search Bar -->
+      <div class="search-section">
+        <div class="search-box-wrapper">
+          <span class="search-icon-left">🔍</span>
+          <input type="search" id="jeiSearchInput" class="search-input" placeholder="Search items, tags, or mod IDs (e.g. 'incinerator', '@create', '#weapon', '#magic', '$food')..." autocomplete="off">
+          <span class="search-shortcut">/</span>
+        </div>
+        <div class="category-pills" id="jeiCategoryPills">
+          <button class="pill active" data-filter="All">All Items</button>
+          <button class="pill" data-filter="#weapon">⚔️ Weapons</button>
+          <button class="pill" data-filter="#armor">🛡️ Armor</button>
+          <button class="pill" data-filter="#tool">⛏️ Tools</button>
+          <button class="pill" data-filter="#magic">✨ Magic & Spells</button>
+          <button class="pill" data-filter="#tech">⚙️ Tech & Kinetic</button>
+          <button class="pill" data-filter="#food">🍲 Food & Cooking</button>
+          <button class="pill" data-filter="#boss_drop">🐉 Boss Drops</button>
+          <button class="pill" data-filter="#storage">🎒 Bags & Storage</button>
+          <button class="pill" data-filter="#material">💎 Ores & Alloys</button>
+          <button class="pill" data-filter="#utility">🗺️ Utility</button>
+        </div>
+      </div>
+
+      <!-- JEI Main Workspace -->
+      <div class="jei-workspace">
+        <!-- Bookmarks Drawer -->
+        <aside class="jei-bookmarks-panel">
+          <div class="bookmarks-header">
+            <h4>📌 Bookmarks (A)</h4>
+            <span id="bookmarkCount" style="font-size:0.75rem; color:var(--text-dim); font-weight:700;">0 pinned</span>
+          </div>
+          <p style="font-size:0.75rem; color:var(--text-dim); margin-bottom:10px;">Hover an item & press <span class="kbd">A</span> or click star to bookmark.</p>
+          <div class="bookmarks-grid" id="bookmarksGrid"></div>
+        </aside>
+
+        <!-- JEI Catalog -->
+        <div class="jei-catalog-container">
+          <div class="jei-toolbar">
+            <span class="jei-count-label" id="jeiResultCount">Showing <b>140</b> items</span>
+            <div style="display:flex; gap:8px; font-size:0.75rem; color:var(--text-dim);">
+              <span>Click item: <b>View Recipe</b></span>
+              <span>•</span>
+              <span><span class="kbd">R</span> = Recipe</span>
+              <span>•</span>
+              <span><span class="kbd">U</span> = Uses</span>
+            </div>
+          </div>
+
+          <div class="jei-grid" id="jeiGrid"></div>
+
+          
+          <!-- JEI Pagination & Page Sizer -->
+          <div class="jei-pagination" id="jeiPagination" style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-top:20px; padding:12px 18px; background:var(--panel); border:1px solid var(--border); border-radius:var(--radius);">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <button id="jeiFirstPage" class="doc-link-btn" style="padding:5px 12px; cursor:pointer;" title="First Page">⏮ First</button>
+              <button id="jeiPrevPage" class="doc-link-btn" style="padding:5px 12px; cursor:pointer;" title="Previous Page">◀ Prev</button>
+              <span id="jeiPageIndicator" style="font-weight:600; color:var(--lime); padding:0 10px; font-size:0.9rem;">Page 1 of 32</span>
+              <button id="jeiNextPage" class="doc-link-btn" style="padding:5px 12px; cursor:pointer;" title="Next Page">Next ▶</button>
+              <button id="jeiLastPage" class="doc-link-btn" style="padding:5px 12px; cursor:pointer;" title="Last Page">Last ⏭</button>
+            </div>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span style="font-size:0.8rem; color:var(--text-muted);">Per Page:</span>
+              <select id="jeiPageSize" style="background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:4px; padding:4px 8px; font-size:0.85rem; cursor:pointer;">
+                <option value="96" selected>96 items</option>
+                <option value="192">192 items</option>
+                <option value="480">480 items</option>
+                <option value="99999">Show All</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="jeiNoResults" style="display:none; text-align:center; padding: 60px 20px; background: var(--panel); border: 1px dashed var(--border); border-radius: var(--radius-lg); margin-top: 10px;">
+            <h3 style="color:#fff; margin-bottom:6px;">No matching items found</h3>
+            <p style="color:var(--text-muted); font-size:0.9rem;">Try searching with <code>@modname</code> (e.g. <code>@create</code>, <code>@cataclysm</code>) or a broader term.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 2: PROGRESSION PATHWAY                -->
+    <!-- ========================================== -->
+    <section id="progression-view" class="wiki-view">
+      <div class="guide-container">
+        <div class="guide-card">
+          <div class="guide-header">
+            <div class="guide-header-icon">🧭</div>
+            <div class="guide-header-text">
+              <h2>Master Modpack Progression Roadmap</h2>
+              <p>Recommended journey route to conquer dungeons, unlock technological automation, master magic, and triumph over endgame titans.</p>
+            </div>
+          </div>
+          
+          <div class="timeline">
+            <!-- Stage 1 -->
+            <div class="timeline-step">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Stage 1: Day 1 Survival & Sustenance</h3>
+              <div class="timeline-body">
+                <p><strong>Primary Mods:</strong> Farmer's Delight, Sophisticated Backpacks, Waystones, Corpse, JourneyMap.</p>
+                <ul style="margin: 8px 0 8px 20px; display: grid; gap: 4px;">
+                  <li>Craft a <strong>Flint/Iron Knife</strong> to harvest straw from grass and butcher wild animals for extra leather and specialized meat cuts.</li>
+                  <li>Set up a <strong>Stove and Cooking Pot</strong>. Cooking meals (like Stuffed Pumpkin, Pasta, Stews) grants <em>Nourished</em> (satiety that prevents sprinting hunger depletion) and <em>Comfort</em> (passive health regen without consuming hunger bars).</li>
+                  <li>Craft your first <strong>Leather Backpack</strong> and insert an Iron Upgrade as soon as you have 4 iron ingots. Equip it in your Curios back slot.</li>
+                  <li>Discover your first <strong>Waystone</strong> in a village. Craft a <strong>Warp Scroll</strong> to always carry a safety teleport home.</li>
+                  <li>Press <span class="kbd">J</span> to inspect your JourneyMap minimap and <span class="kbd">B</span> to mark home coordinates.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="timeline-step">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Stage 2: Modular Toolmaking & Early Kinetic Tech</h3>
+              <div class="timeline-body">
+                <p><strong>Primary Mods:</strong> Tinkers' Construct, Create, Alex's Mobs, Born in Chaos.</p>
+                <ul style="margin: 8px 0 8px 20px; display: grid; gap: 4px;">
+                  <li>Build a <strong>Tinkers' Melter or Full Smeltery</strong> using Seared Bricks, Faucets, and Casting Tables. Smelt raw ores for alloy bonuses (Slimesteel, Rose Gold, Hepatizon).</li>
+                  <li>Construct custom Pickaxes, Broadaxes, and Cleavers with specialized traits: <em>Lightweight</em> (Cobalt), <em>Insatiable</em> (Manyullyn), and <em>Enhanced</em> (extra modifier slot).</li>
+                  <li>Establish your first <strong>Create Kinetic Network</strong> using Water Wheels or Windmills to power a <strong>Mechanical Press</strong> (iron sheets) and <strong>Mechanical Mixer + Basin</strong>.</li>
+                  <li>Craft the <strong>Animal Dictionary</strong> with a Book and Crocodile Scute to track Alex's Mobs creatures and valuable taming mechanics.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="timeline-step">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Stage 3: Arcane Sorcery & High Alchemy</h3>
+              <div class="timeline-body">
+                <p><strong>Primary Mods:</strong> Iron's Spells 'n Spellbooks, Hexerei, So Many Enchants.</p>
+                <ul style="margin: 8px 0 8px 20px; display: grid; gap: 4px;">
+                  <li>Craft an <strong>Inscription Table</strong> and <strong>Scroll Forge</strong>. Choose your school affinity (Fire, Lightning, Holy, Blood, Ender, Ice, Nature, Void, or Eldritch).</li>
+                  <li>Forge specialized Wizard Robes that boost your max Mana and Spell Power. Imbue diamond/netherite gear with spell slots at the <strong>Arcane Anvil</strong>.</li>
+                  <li>Build a <strong>Hexerei Mixing Cauldron</strong>, Herb Drying Racks, and Pestle & Mortar. Craft a flying <strong>Witch Hazel Broom</strong> for high-speed aerial reconnaissance.</li>
+                  <li>Raid underground <strong>Catacombs</strong> to summon and defeat <strong>The Dead King</strong> for legendary Blood Magic relics.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="timeline-step">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Stage 4: Dragon Conquest & Mythological Slaying</h3>
+              <div class="timeline-body">
+                <p><strong>Primary Mods:</strong> Ice and Fire, The Aether, Boss Locator, Dragonseeker.</p>
+                <ul style="margin: 8px 0 8px 20px; display: grid; gap: 4px;">
+                  <li>Use the <strong>Dragonseeker Dowsing Rod</strong> to detect deep underground Dragon Caves (Stage 4-5 dragons).</li>
+                  <li>Slain Dragons drop scales for heavy elemental armor and Dragon Blood. Multi-block <strong>Dragon Forges</strong> allow forging of indestructible <strong>Dragonsteel</strong> ingots.</li>
+                  <li>Construct an <strong>Aether Portal</strong> (Glowstone Frame + Water Bucket). Enter the floating paradise and conquer the <strong>Bronze Dungeon (Slider)</strong>, <strong>Silver Dungeon (Valkyrie Queen)</strong>, and <strong>Gold Dungeon (Sun Spirit)</strong>.</li>
+                  <li>Hunt Gorgons in temples for their decapitated Head (instantly petrifies dangerous foes into stone statues).</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="timeline-step">
+              <div class="timeline-dot"></div>
+              <h3 class="timeline-title">Stage 5: Endgame Titans & The Otherside</h3>
+              <div class="timeline-body">
+                <p><strong>Primary Mods:</strong> L_Ender's Cataclysm, Deeper and Darker.</p>
+                <ul style="margin: 8px 0 8px 20px; display: grid; gap: 4px;">
+                  <li>Defeat the Vanilla Warden to acquire the <strong>Heart of the Deep</strong>. Right-click the Ancient City reinforced deepslate frame to unlock <strong>The Otherside Dimension</strong>.</li>
+                  <li>Raid Cataclysm structures:
+                    <br>• <strong>Soul Forge (Nether):</strong> Slay the massive <em>Netherite Monstrosity</em> to forge the <em>Incinerator</em> and <em>Monstrous Helm</em>.
+                    <br>• <strong>Ignited Arena (Nether):</strong> Defeat <em>Ignis</em>, Lord of the Blazing Pyre, for Ignitium armor and fire dominance.
+                    <br>• <strong>Sunken City (Deep Ocean):</strong> Battle <em>The Leviathan</em> with Abyss Blasts.
+                    <br>• <strong>Ruined Citadel (The End):</strong> Face the <em>Ender Guardian</em> for the <em>Gauntlet of Guard</em> and <em>Void Core</em>.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 3: BOSS BESTIARY                      -->
+    <!-- ========================================== -->
+    <section id="bosses-view" class="wiki-view">
+      <div style="margin-bottom: 24px;">
+        <h2 style="font-family: Georgia, serif; font-size: 1.6rem; color:#fff; margin-bottom: 6px;">Major Boss Bestiary & Combat Guides</h2>
+        <p style="color: var(--text-muted);">Comprehensive combat analysis, locations, tactical weaknesses, and legendary drops.</p>
+      </div>
+
+      <div class="boss-grid">
+        <!-- Netherite Monstrosity -->
+        <article class="boss-card cataclysm">
+          <div class="boss-head">
+            <div>
+              <span class="boss-origin">L_Ender's Cataclysm</span>
+              <h3 class="boss-name">Netherite Monstrosity</h3>
+            </div>
+            <span class="hero-badge gold">500 HP</span>
+          </div>
+          <div class="boss-stats">
+            <div class="boss-stat-item"><small>Spawn Location</small><b>Soul Blacksmith (Nether)</b></div>
+            <div class="boss-stat-item"><small>Armor / Defense</small><b>Extreme (Netherite Plating)</b></div>
+            <div class="boss-stat-item"><small>Primary Attacks</small><b>Earthquake, Molten Slag, Melee Slam</b></div>
+            <div class="boss-stat-item"><small>Vulnerability</small><b>Ranged Magic & Mobility</b></div>
+          </div>
+          <p class="boss-tactic"><strong>Strategy:</strong> The Monstrosity delivers devastating ground slams that send shockwaves through the floor. Maintain distance using Hexerei Brooms or Holy Magic leap spells. Beware of its molten lava spit that creates persistent fire pools.</p>
+          <div class="boss-loot"><strong>Key Drops:</strong> 
+      <span class="boss-drop-tag" data-item-id="cataclysm:monstrous_horn"><img src="assets/items/cataclysm_monstrous_horn.png"> Monstrous Horn</span>
+      <span class="boss-drop-tag" data-item-id="cataclysm:monstrous_helm"><img src="assets/items/cataclysm_monstrous_helm.png"> Monstrous Helm</span>
+      <span class="boss-drop-tag" data-item-id="cataclysm:the_incinerator"><img src="assets/items/cataclysm_the_incinerator.png"> The Incinerator</span></div>
+        </article>
+
+        <!-- Ignis -->
+        <article class="boss-card cataclysm">
+          <div class="boss-head">
+            <div>
+              <span class="boss-origin">L_Ender's Cataclysm</span>
+              <h3 class="boss-name">Ignis</h3>
+            </div>
+            <span class="hero-badge gold">450 HP (2 Phases)</span>
+          </div>
+          <div class="boss-stats">
+            <div class="boss-stat-item"><small>Spawn Location</small><b>Ignited Arena (Nether)</b></div>
+            <div class="boss-stat-item"><small>Weaponry</small><b>Colossal Flame Greatsword</b></div>
+            <div class="boss-stat-item"><small>Phase 2 Trigger</small><b>Below 50% HP (Ignited Rage)</b></div>
+            <div class="boss-stat-item"><small>Vulnerability</small><b>Ice Spells & Frost Damage</b></div>
+          </div>
+          <p class="boss-tactic"><strong>Strategy:</strong> In Phase 1, Ignis dashes and performs horizontal sword cleaves. In Phase 2, he summons orbiting fire shields and rain of meteors. Use <em>Iron's Spells Ice Magic</em> (Frost step, Ice Shards) to exploit his thermal weakness.</p>
+          <div class="boss-loot"><strong>Key Drops:</strong> 
+      <span class="boss-drop-tag" data-item-id="cataclysm:ignitium_ingot"><img src="assets/items/cataclysm_ignitium_ingot.png"> Ignitium Ingot</span>
+      <span class="boss-drop-tag" data-item-id="cataclysm:the_incinerator"><img src="assets/items/cataclysm_the_incinerator.png"> Ignitium Gear Base</span></div>
+        </article>
+
+        <!-- The Harbinger -->
+        <article class="boss-card cataclysm">
+          <div class="boss-head">
+            <div>
+              <span class="boss-origin">L_Ender's Cataclysm</span>
+              <h3 class="boss-name">The Harbinger</h3>
+            </div>
+            <span class="hero-badge gold">390 HP</span>
+          </div>
+          <div class="boss-stats">
+            <div class="boss-stat-item"><small>Spawn Location</small><b>Ancient Factory Sub-level</b></div>
+            <div class="boss-stat-item"><small>Combat Style</small><b>Laser Barrage & Homing Missiles</b></div>
+            <div class="boss-stat-item"><small>Special Hazard</small><b>Wither Infection & EMP Pulses</b></div>
+            <div class="boss-stat-item"><small>Vulnerability</small><b>Reflective Shields & High Burst Damage</b></div>
+          </div>
+          <p class="boss-tactic"><strong>Strategy:</strong> Hide behind reinforced factory pillars when his laser targeting locks onto you. Use Holy Magic <em>Fortify</em> and <em>Heal</em> to nullify Wither status effects.</p>
+          <div class="boss-loot"><strong>Key Drops:</strong> Witherite Ingot, Laser Gatling, EMP Pulse module.</div>
+        </article>
+
+        <!-- Stage 5 Dragons -->
+        <article class="boss-card">
+          <div class="boss-head">
+            <div>
+              <span class="boss-origin">Ice and Fire</span>
+              <h3 class="boss-name">Ancient Dragons (Stage 4-5)</h3>
+            </div>
+            <span class="hero-badge gold">400 - 500 HP</span>
+          </div>
+          <div class="boss-stats">
+            <div class="boss-stat-item"><small>Variants</small><b>Fire, Ice, Lightning</b></div>
+            <div class="boss-stat-item"><small>Location</small><b>Deep Underground Dragon Roosts</b></div>
+            <div class="boss-stat-item"><small>Breath Weapon</small><b>Incineration / Absolute Zero / Paralyzing Arc</b></div>
+            <div class="boss-stat-item"><small>Vulnerability</small><b>Opposing Element & Dragonbone Arrows</b></div>
+          </div>
+          <p class="boss-tactic"><strong>Strategy:</strong> Never fight inside tight caverns unless you have high mobility. Drink Fire Resistance potions for Fire Dragons. Bring Gorgon Heads if you want an instant kill (beware: petrified dragons yield stone, not eggs!).</p>
+          <div class="boss-loot"><strong>Key Drops:</strong> Dragon Scales (Dragonscale Armor), Dragon Blood, Dragon Heart, <strong>Dragon Eggs</strong> (tameable baby dragons!).</div>
+        </article>
+
+        <!-- The Dead King -->
+        <article class="boss-card magic">
+          <div class="boss-head">
+            <div>
+              <span class="boss-origin">Iron's Spells 'n Spellbooks</span>
+              <h3 class="boss-name">The Dead King</h3>
+            </div>
+            <span class="hero-badge gold">300 HP</span>
+          </div>
+          <div class="boss-stats">
+            <div class="boss-stat-item"><small>Spawn Location</small><b>Deep Catacombs Tomb</b></div>
+            <div class="boss-stat-item"><small>Spell Schools</small><b>Blood & Necromancy</b></div>
+            <div class="boss-stat-item"><small>Minions</small><b>Undead Knights & Blood Steeds</b></div>
+            <div class="boss-stat-item"><small>Vulnerability</small><b>Holy Magic (Double Damage!)</b></div>
+          </div>
+          <p class="boss-tactic"><strong>Strategy:</strong> Equip Holy Magic scrolls (Divine Smite, Sunbeam, Hallow). Holy spells burn through undead resistances and clear his summoned skeletal horde in seconds.</p>
+          <div class="boss-loot"><strong>Key Drops:</strong> Blood Staff, Dead King's Crown, Unique Tier Blood Spells, Arcane Essence.</div>
+        </article>
+
+        <!-- Sun Spirit -->
+        <article class="boss-card aether">
+          <div class="boss-head">
+            <div>
+              <span class="boss-origin">The Aether</span>
+              <h3 class="boss-name">Sun Spirit</h3>
+            </div>
+            <span class="hero-badge gold">Gold Dungeon Boss</span>
+          </div>
+          <div class="boss-stats">
+            <div class="boss-stat-item"><small>Location</small><b>Aether Golden Temple</b></div>
+            <div class="boss-stat-item"><small>Immunity</small><b>Invulnerable to Direct Weapon Hits</b></div>
+            <div class="boss-stat-item"><small>Mechanic</small><b>Fireball Deflection & Ice Crystal</b></div>
+            <div class="boss-stat-item"><small>Threat</small><b>Endless Sun Lava & Solar Flares</b></div>
+          </div>
+          <p class="boss-tactic"><strong>Strategy:</strong> Standard weapons cannot harm the Sun Spirit! You must hit his thrown white ice crystals back at him (similar to Ghast fireballs). Each deflected crystal strips away a portion of his solar mantle.</p>
+          <div class="boss-loot"><strong>Key Drops:</strong> Sun Altar, Phoenix Bow, Valkyrie Cape, Golden Feather, Sun Blessing.</div>
+        </article>
+
+        <!-- Slider -->
+        <article class="boss-card aether">
+          <div class="boss-head">
+            <div>
+              <span class="boss-origin">The Aether</span>
+              <h3 class="boss-name">Slider</h3>
+            </div>
+            <span class="hero-badge gold">Bronze Dungeon Boss</span>
+          </div>
+          <div class="boss-stats">
+            <div class="boss-stat-item"><small>Location</small><b>Bronze Labyrinth Floor</b></div>
+            <div class="boss-stat-item"><small>Immunity</small><b>Immune to Swords, Axes & Magic</b></div>
+            <div class="boss-stat-item"><small>Weakness</small><b>Pickaxes Only (Zanite / Gravitite)</b></div>
+            <div class="boss-stat-item"><small>Phase</small><b>Turns Red at 50% HP (Increases Speed)</b></div>
+          </div>
+          <p class="boss-tactic"><strong>Strategy:</strong> Bring your highest DPS Pickaxe (Tinkers' Hammer or Zanite Pickaxe). Dodge his sliding rush, then strike his eyes when he stops against a wall.</p>
+          <div class="boss-loot"><strong>Key Drops:</strong> Bronze Key, Cloud Staff, Hammer of Kingbdogz, Invisibility Ring.</div>
+        </article>
+
+        <!-- Void Worm -->
+        <article class="boss-card magic">
+          <div class="boss-head">
+            <div>
+              <span class="boss-origin">Alex's Mobs</span>
+              <h3 class="boss-name">Void Worm</h3>
+            </div>
+            <span class="hero-badge gold">300 HP</span>
+          </div>
+          <div class="boss-stats">
+            <div class="boss-stat-item"><small>Spawn Location</small><b>The End Void (Throw Mysterious Worm)</b></div>
+            <div class="boss-stat-item"><small>Phases</small><b>Split Segments & Dimensional Portals</b></div>
+            <div class="boss-stat-item"><small>Attacks</small><b>Void Laser, Tail Spikes</b></div>
+            <div class="boss-stat-item"><small>Vulnerability</small><b>Ranged Projectiles & Flight</b></div>
+          </div>
+          <p class="boss-tactic"><strong>Strategy:</strong> Fight with an Elytra, Aether Parachute, or Hexerei Broom. Destroy the worm segments one by one as it dives through void rifts.</p>
+          <div class="boss-loot"><strong>Key Drops:</strong> Void Worm Eye, Void Worm Mandible, Dimensional Carver.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 4: MAGIC & TECH SYSTEMS               -->
+    <!-- ========================================== -->
+    <section id="systems-view" class="wiki-view">
+      <div class="guide-container">
+        
+        <!-- Tinkers Smeltery Deep Dive -->
+        <div class="guide-card">
+          <div class="guide-header">
+            <div class="guide-header-icon">🔥</div>
+            <div class="guide-header-text">
+              <h2>Tinkers' Construct Smeltery & Alloy Matrix</h2>
+              <p>Master multi-block metallurgy, fluid casting, and tool customization.</p>
+            </div>
+          </div>
+          
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+            <div style="background:var(--bg); padding:16px; border-radius:var(--radius); border:1px solid var(--border);">
+              <h4 style="color:var(--lime); margin-bottom:8px;">Smeltery Construction</h4>
+              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
+                1. Build a floor of <strong>Seared Bricks/Stone</strong> (min 3x3).<br>
+                2. Form hollow walls around the floor with Seared Bricks.<br>
+                3. Place a <strong>Smeltery Controller</strong>, <strong>Seared Tank</strong> (filled with Lava), and <strong>Seared Drain</strong> facing outwards.<br>
+                4. Attach <strong>Seared Faucets</strong> to the drains over <strong>Casting Tables</strong> or <strong>Casting Basins</strong>.
+              </p>
+            </div>
+
+            <div style="background:var(--bg); padding:16px; border-radius:var(--radius); border:1px solid var(--border);">
+              <h4 style="color:var(--gold); margin-bottom:8px;">Key Alloy Recipes</h4>
+              <ul style="font-size:0.86rem; color:var(--text-muted); line-height:1.5; padding-left:16px;">
+                <li><strong>Manyullyn:</strong> 3 Molten Cobalt + 1 Molten Debris (Insatiable trait).</li>
+                <li><strong>Slimesteel:</strong> 1 Molten Iron + 1 Liquid Earth Slime + 1 Seared Stone.</li>
+                <li><strong>Rose Gold:</strong> 3 Molten Copper + 1 Molten Gold (+1 Modifier Slot).</li>
+                <li><strong>Hepatizon:</strong> 2 Molten Copper + 1 Molten Cobalt + 1 Molten Obsidian.</li>
+                <li><strong>Queens Slime:</strong> 1 Molten Cobalt + 1 Molten Gold + 1 Magma Cream.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Create Kinetic Engineering -->
+        <div class="guide-card">
+          <div class="guide-header">
+            <div class="guide-header-icon">⚙️</div>
+            <div class="guide-header-text">
+              <h2>Create: Rotational Kinematics & Automation</h2>
+              <p>Understand Stress Units (SU), Rotations Per Minute (RPM), and assembly lines.</p>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+            <div style="background:var(--bg); padding:16px; border-radius:var(--radius); border:1px solid var(--border);">
+              <h4 style="color:var(--cyan); margin-bottom:8px;">Power Generation</h4>
+              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
+                • <strong>Water Wheel:</strong> 256 SU at 8 RPM. Flow water on top and sides for max efficiency.<br>
+                • <strong>Windmill:</strong> Up to 8,192 SU based on attached Sail blocks (8 to 128 sails).<br>
+                • <strong>Steam Engine:</strong> Attach to a heated Fluid Tank (Water + Blaze Burners fed by coal or lava). Provides tens of thousands of SU!
+              </p>
+            </div>
+
+            <div style="background:var(--bg); padding:16px; border-radius:var(--radius); border:1px solid var(--border);">
+              <h4 style="color:var(--lime); margin-bottom:8px;">Speed Shifting (Gear Ratios)</h4>
+              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
+                • Connect a <strong>Large Cogwheel</strong> (driving) diagonally to a <strong>Small Cogwheel</strong> (driven) to <strong>DOUBLE the RPM</strong> (halves available torque/capacity).<br>
+                • Use a <strong>Rotation Speed Controller</strong> on a Cogwheel to dynamically set exact RPM from 1 to 256 without bulky gear chains.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Iron's Spells Magic Schools -->
+        <div class="guide-card">
+          <div class="guide-header">
+            <div class="guide-header-icon">✨</div>
+            <div class="guide-header-text">
+              <h2>Iron's Spells 'n Spellbooks: School Compendium</h2>
+              <p>Select your elemental affinity and master the casting progression.</p>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px;">
+            <div style="background:rgba(231,111,81,0.1); border:1px solid var(--red); padding:12px; border-radius:var(--radius);">
+              <h4 style="color:var(--red);">🔥 Fire Magic</h4>
+              <p style="font-size:0.82rem; color:var(--text-muted);">Fireball, Wall of Fire, Blazing Dash, Magma Ball. High AoE damage and burn over time.</p>
+            </div>
+            <div style="background:rgba(83,144,217,0.1); border:1px solid var(--blue); padding:12px; border-radius:var(--radius);">
+              <h4 style="color:var(--blue);">❄️ Ice Magic</h4>
+              <p style="font-size:0.82rem; color:var(--text-muted);">Ice Shards, Frost Step, Icicle, Blizzard. Freezes enemies and inflicts frostbite slow.</p>
+            </div>
+            <div style="background:rgba(229,184,76,0.1); border:1px solid var(--gold); padding:12px; border-radius:var(--radius);">
+              <h4 style="color:var(--gold);">⚡ Lightning Magic</h4>
+              <p style="font-size:0.82rem; color:var(--text-muted);">Lightning Bolt, Chain Lightning, Charge, Ascension. Fast cast speed and multi-target chaining.</p>
+            </div>
+            <div style="background:rgba(154,212,74,0.1); border:1px solid var(--lime); padding:12px; border-radius:var(--radius);">
+              <h4 style="color:var(--lime);">✝️ Holy Magic</h4>
+              <p style="font-size:0.82rem; color:var(--text-muted);">Heal, Divine Smite, Hallow, Fortify. 200% bonus damage against undead, bosses, & Cataclysm mobs.</p>
+            </div>
+            <div style="background:rgba(179,136,235,0.1); border:1px solid var(--purple); padding:12px; border-radius:var(--radius);">
+              <h4 style="color:var(--purple);">🌌 Ender / Void Magic</h4>
+              <p style="font-size:0.82rem; color:var(--text-muted);">Teleport, Black Hole, Void Tentacles, Recall. Unrivaled mobility, enemy repositioning, and dimensional gravity.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 5: DIMENSIONS & BIOMES                -->
+    <!-- ========================================== -->
+    <section id="dimensions-view" class="wiki-view">
+      <div class="guide-container">
+        
+        <!-- The Aether -->
+        <div class="guide-card">
+          <div class="guide-header">
+            <div class="guide-header-icon">☁️</div>
+            <div class="guide-header-text">
+              <h2>The Aether Dimension</h2>
+              <p>The legendary hostile paradise in the sky.</p>
+            </div>
+          </div>
+          <div class="callout" style="margin-bottom: 16px;">
+            <strong>Portal Activation:</strong> Build a 4x5 vertical portal frame out of <strong>Glowstone</strong> (identical to a Nether Portal) and right-click the inside frame with a <strong>Water Bucket</strong>!
+          </div>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px;">
+            <div style="background:var(--bg); padding:14px; border-radius:var(--radius); border:1px solid var(--border);">
+              <h4 style="color:var(--gold); margin-bottom:4px;">Unique Ores</h4>
+              <p style="font-size:0.84rem; color:var(--text-muted);"><strong>Ambrosia:</strong> Restores health & hunger.<br><strong>Zanite:</strong> Tool durability scaling.<br><strong>Gravitite:</strong> Anti-gravity floating ore, creates floating armor & tools.</p>
+            </div>
+            <div style="background:var(--bg); padding:14px; border-radius:var(--radius); border:1px solid var(--border);">
+              <h4 style="color:var(--cyan); margin-bottom:4px;">Fauna & Flying Mounts</h4>
+              <p style="font-size:0.84rem; color:var(--text-muted);"><strong>Moas:</strong> Giant flight birds. Tame by hatching wild Moa Eggs in an <strong>Incubator</strong> fueled by Ambrosia.<br><strong>Flying Pigs & Aerbunnies.</strong></p>
+            </div>
+            <div style="background:var(--bg); padding:14px; border-radius:var(--radius); border:1px solid var(--border);">
+              <h4 style="color:var(--lime); margin-bottom:4px;">Aether Dungeons</h4>
+              <p style="font-size:0.84rem; color:var(--text-muted);">• <strong>Bronze Dungeon:</strong> Slider boss (Pickaxes only).<br>• <strong>Silver Dungeon:</strong> Valkyrie Temple.<br>• <strong>Gold Dungeon:</strong> Sun Spirit Solar Sanctum.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- The Otherside (Deeper and Darker) -->
+        <div class="guide-card">
+          <div class="guide-header">
+            <div class="guide-header-icon">👁️</div>
+            <div class="guide-header-text">
+              <h2>The Otherside (Deeper and Darker)</h2>
+              <p>The nightmarish sculk realm deep beneath the Ancient Cities.</p>
+            </div>
+          </div>
+          <div class="callout warning" style="margin-bottom: 16px;">
+            <strong>Portal Activation:</strong> Slay a Warden in an Ancient City to claim the <strong>Heart of the Deep</strong>. Clear out any sculk veins from the central Reinforced Deepslate frame in the city and right-click it with the Heart!
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.6;">
+            Explore the <strong>Otherside Forest</strong>, <strong>Sculk Caves</strong>, and <strong>Overcast Glade</strong>. Mine Gloomslate and ancient Sculk ores to craft Warden Armor (completely prevents blindness/darkness and grants the Sonic Boom attack).
+          </p>
+        </div>
+
+        <!-- Terralith & Biomes O' Plenty -->
+        <div class="guide-card">
+          <div class="guide-header">
+            <div class="guide-header-icon">🌲</div>
+            <div class="guide-header-text">
+              <h2>Overworld Generation: Terralith & Biomes O' Plenty</h2>
+              <p>Over 100+ new majestic biomes, realistic mountain spires, and cavern networks.</p>
+            </div>
+          </div>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:12px;">
+            <div style="background:var(--bg); padding:14px; border-radius:var(--radius); border:1px solid var(--border);">
+              <h4 style="color:var(--lime); margin-bottom:4px;">Terralith Highlights</h4>
+              <p style="font-size:0.84rem; color:var(--text-muted);">Yellowstone Geysers, Mirage Isles, Volcanic Basalt Calderas, Bryce Canyon, Painted Mountains, Wintry Forest, Alpha Islands.</p>
+            </div>
+            <div style="background:var(--bg); padding:14px; border-radius:var(--radius); border:1px solid var(--border);">
+              <h4 style="color:var(--gold); margin-bottom:4px;">Biomes O' Plenty Gems</h4>
+              <p style="font-size:0.84rem; color:var(--text-muted);">Ruby, Sapphire, Topaz, Tanzanite, Malachite, Rose Quartz. Unique wood types like Magic Wood, Cherry, Redwood, Willow.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 6: HOTKEYS & CONTROLS CHEAT SHEET     -->
+    <!-- ========================================== -->
+    <section id="hotkeys-view" class="wiki-view">
+      <div class="guide-card">
+        <div class="guide-header">
+          <div class="guide-header-icon">⌨️</div>
+          <div class="guide-header-text">
+            <h2>Essential Modpack Keybindings & Shortcuts</h2>
+            <p>Master these core keyboard shortcuts for seamless navigation, quick-crafting, and death recovery.</p>
+          </div>
+        </div>
+
+        <table class="keybind-table">
+          <thead>
+            <tr>
+              <th>Key / Shortcut</th>
+              <th>Mod System</th>
+              <th>Action & Functionality</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="kbd">R</span></td>
+              <td><strong>JEI (Just Enough Items)</strong></td>
+              <td>Hover cursor over any item and press R to view its <strong>Crafting Recipes</strong>.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd">U</span></td>
+              <td><strong>JEI (Just Enough Items)</strong></td>
+              <td>Hover cursor over any item and press U to view its <strong>Uses in Recipes</strong>.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd">A</span></td>
+              <td><strong>JEI (Just Enough Items)</strong></td>
+              <td>Bookmark item to the left-side quick access panel.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd">J</span></td>
+              <td><strong>JourneyMap</strong></td>
+              <td>Open the <strong>Fullscreen Map</strong> with waypoint managers and biome scans.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd">B</span></td>
+              <td><strong>JourneyMap</strong></td>
+              <td>Quickly create a new <strong>Waypoint</strong> at your current player coordinates.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd">U</span> (World)</td>
+              <td><strong>Corpse Mod</strong></td>
+              <td>Open <strong>Death History GUI</strong> to inspect past death coordinates, dimension, and inventory.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd">B</span> / <span class="kbd">Shift+B</span></td>
+              <td><strong>Sophisticated Backpacks</strong></td>
+              <td>Open equipped Curios Backpack directly without taking it off.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd">C</span> / <span class="kbd">V</span></td>
+              <td><strong>Iron's Spells</strong></td>
+              <td>Cast quick-slot spells / cycle active Spellbook spell wheel.</td>
+            </tr>
+            <tr>
+              <td><span class="kbd">/</span></td>
+              <td><strong>Field Guide Wiki</strong></td>
+              <td>Focus the interactive search bar at the top of this guide!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 7: PACK CONQUEST CHECKLIST            -->
+    <!-- ========================================== -->
+    <section id="checklist-view" class="wiki-view"><div class="guide-card"><h2>Adventure checklist</h2><div id="restoredObjectives"></div></div></section>
+
+    <!-- ========================================== -->
+    <!-- VIEW 8: MOD TECHNICAL COMPENDIUM           -->
+    <!-- ========================================== -->
+    <section id="mods-view" class="wiki-view"><h2>Mod directory</h2><div id="retainedModDirectory" class="mod-grid"></div></section>
+
+  </main>
+</div>
+
+<!-- ========================================== -->
+<!-- AUTHENTIC JEI RECIPE & USES MODAL          -->
+<!-- ========================================== -->
+<dialog id="recipeModal">
+  <div class="recipe-dialog-content">
+    <div class="recipe-dialog-header">
+      <div class="recipe-header-left">
+        <div class="recipe-header-icon" id="recIcon">🗡️</div>
+        <div class="recipe-header-text">
+          <h2 id="recTitle">Item Name</h2>
+          <small id="recMod">Mod Name • #tag</small>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <button id="recBookmarkBtn" class="pill" style="font-size:0.8rem;">⭐ Bookmark (A)</button>
+        <button class="recipe-dialog-close" id="recCloseBtn" aria-label="Close modal">×</button>
+      </div>
+    </div>
+
+    <!-- Recipe Type Switcher Tabs -->
+    <div class="recipe-tabs" id="recipeTabs">
+      <button class="recipe-tab-btn active" data-tab="crafting">🛠️ Crafting (3x3)</button>
+      <button class="recipe-tab-btn" data-tab="uses">📋 Recipe Uses</button>
+      <button class="recipe-tab-btn" data-tab="stats">📊 Stats & Info</button>
+    </div>
+
+    <!-- Tab View 1: Crafting Matrix -->
+    <div id="recipeCraftingTab" class="recipe-tab-content">
+      <div class="mc-crafting-panel">
+        <div class="mc-grid-3x3" id="mcGrid3x3"></div>
+        <div class="mc-arrow-box">
+          <div class="mc-craft-arrow">➔</div>
+          <span class="mc-craft-type" id="recProcessType">Shaped Crafting</span>
+        </div>
+        <div class="mc-output-slot" id="mcOutputSlot">
+          <span id="mcOutputIcon">🗡️</span>
+          <span class="mc-output-count" id="mcOutputCount">1</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab View 2: Uses in Recipes -->
+    <div id="recipeUsesTab" class="recipe-tab-content" style="display:none;">
+      <div style="background:var(--bg); padding:18px; border-radius:var(--radius); border:1px solid var(--border);">
+        <h4 style="color:var(--gold); margin-bottom:8px;">Used in following Crafts / Systems:</h4>
+        <div id="recUsesList" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; display:flex; flex-direction:column; gap:8px;"></div>
+      </div>
+    </div>
+
+    <!-- Tab View 3: Stats & Mod Info -->
+    <div id="recipeStatsTab" class="recipe-tab-content" style="display:none;">
+      <div class="recipe-meta-section">
+        <div class="recipe-meta-box">
+          <small>Source Mod</small>
+          <b id="recMetaMod">Create</b>
+        </div>
+        <div class="recipe-meta-box">
+          <small>Item Category / Tag</small>
+          <b id="recMetaCat">Technology</b>
+        </div>
+        <div class="recipe-meta-box">
+          <small>Rarity / Tier</small>
+          <b id="recMetaTier">Epic / Tier 4</b>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lore / Description Box -->
+    <div class="recipe-desc-box" id="recDesc"></div>
+  </div>
+</dialog>
+
+<!-- Detailed Mod Inspection Modal -->
+<dialog id="modModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title-area">
+        <div class="modal-category-tag" id="modalCatTag">Category</div>
+        <h2 id="modalModTitle">Mod Name</h2>
+      </div>
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">×</button>
+    </div>
+
+    <p id="modalModDesc" style="font-size:0.95rem; color:var(--text); line-height:1.6;"></p>
+
+    <div class="modal-grid-info">
+      <div class="modal-info-box">
+        <small>Mod Version</small>
+        <b id="modalModVersion">1.0.0</b>
+      </div>
+      <div class="modal-info-box">
+        <small>Pack Role</small>
+        <b id="modalModRole">Content Mod</b>
+      </div>
+      <div class="modal-info-box">
+        <small>Primary Dependency</small>
+        <b id="modalModDep">Forge / NeoForge</b>
+      </div>
+    </div>
+
+    <div class="modal-section">
+      <h4>In-Depth Wiki Overview & Mechanics</h4>
+      <div id="modalDeepDive" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; display:flex; flex-direction:column; gap:10px;"></div>
+    </div>
+
+    <div class="modal-section">
+      <h4>JAR Filename in Mods Folder</h4>
+      <div id="modalJarName" style="font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:0.8rem; background:var(--bg); padding:10px 14px; border-radius:var(--radius); border:1px solid var(--border); color:var(--lime);"></div>
+    </div>
+
+    <div class="modal-section">
+      <h4>Official Documentation & Links</h4>
+      <div class="modal-links-row" id="modalLinks"></div>
+    </div>
+  </div>
+</dialog>
+
+<script src="scripts/mod_directory.js"></script><script src="scripts/restored-wiki.js"></script>
+
+  <!-- Authentic Minecraft Floating Tooltip Container -->
+  <div id="mcFloatingTooltip">
+    <div id="mcTipTitle" class="mc-tip-title">Item Name</div>
+    <div id="mcTipMod" class="mc-tip-mod">Minecraft</div>
+    <div id="mcTipHint" class="mc-tip-hint">Left-click: View Recipe</div>
+  </div>
+
+</body>
+</html>

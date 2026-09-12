@@ -1,0 +1,1536 @@
+
+    :root {
+      --bg: #0b0f0b;
+      --bg-alt: #111711;
+      --panel: #162016;
+      --panel-hover: #1e2c1e;
+      --panel-card: #141c13;
+      --border: #283624;
+      --border-bright: #445938;
+      --text: #f3f6ef;
+      --text-muted: #9eab97;
+      --text-dim: #6d7d67;
+      --lime: #9ad44a;
+      --lime-glow: rgba(154, 212, 74, 0.25);
+      --gold: #e5b84c;
+      --gold-glow: rgba(229, 184, 76, 0.2);
+      --cyan: #4ecdc4;
+      --purple: #b388eb;
+      --red: #e76f51;
+      --blue: #5390d9;
+      --mc-gui-bg: #c6c6c6;
+      --mc-gui-dark: #373737;
+      --mc-gui-slot: #8b8b8b;
+      --mc-gui-slot-border-dark: #373737;
+      --mc-gui-slot-border-light: #ffffff;
+      --shadow: 0 16px 40px rgba(0,0,0,0.55);
+      --shadow-lg: 0 24px 60px rgba(0,0,0,0.75);
+      --radius: 10px;
+      --radius-lg: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: radial-gradient(circle at 85% -10%, #223716 0%, transparent 40rem),
+                  radial-gradient(circle at 10% 90%, #13220f 0%, transparent 35rem),
+                  var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    button, input, select { font: inherit; }
+    a { color: var(--lime); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: #bdf071; text-decoration: underline; }
+
+    /* Layout */
+    .app-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 24px 20px;
+      border-right: 1px solid var(--border);
+      background: rgba(11, 15, 11, 0.96);
+      backdrop-filter: blur(14px);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 50;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      border: 2px solid #a8d45a;
+      background: linear-gradient(135deg, #789b3c 0%, #3e5618 100%);
+      box-shadow: 0 0 15px var(--lime-glow), inset 0 2px 4px rgba(255,255,255,0.3);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #fff;
+    }
+    .brand-text h1 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .brand-text small {
+      display: block;
+      color: var(--lime);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-group {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .nav-label {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-dim);
+      padding: 8px 12px 4px;
+    }
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      text-align: left;
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: all 0.15s ease;
+    }
+    .nav-btn:hover {
+      color: var(--text);
+      background: var(--panel-hover);
+      border-color: var(--border);
+    }
+    .nav-btn.active {
+      color: #fff;
+      background: var(--panel);
+      border-color: var(--lime);
+      box-shadow: 0 0 15px rgba(154, 212, 74, 0.15);
+      font-weight: 700;
+    }
+    .nav-btn .badge {
+      margin-left: auto;
+      background: var(--panel-hover);
+      padding: 2px 7px;
+      border-radius: 99px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      border: 1px solid var(--border);
+    }
+    .nav-btn.active .badge {
+      background: var(--lime);
+      color: #0b0f0b;
+      border-color: var(--lime);
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+    .progress-pill {
+      background: rgba(0,0,0,0.4);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px;
+      margin-top: 8px;
+    }
+    .progress-bar-bg {
+      height: 6px;
+      background: var(--bg);
+      border-radius: 99px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--lime), var(--cyan));
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 40px clamp(20px, 4vw, 60px);
+      max-width: 1440px;
+      min-width: 0;
+    }
+
+    /* Views */
+    .wiki-view { display: none; }
+    .wiki-view.active { display: block; animation: fadeIn 0.18s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Hero Header */
+    .hero {
+      margin-bottom: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .hero-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.1rem, 3.8vw, 3.4rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+      color: #fff;
+    }
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+      max-width: 720px;
+    }
+    .hero-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .hero-badge.lime { color: var(--lime); border-color: rgba(154, 212, 74, 0.4); }
+    .hero-badge.gold { color: var(--gold); border-color: rgba(229, 184, 76, 0.4); }
+    .hero-badge.cyan { color: var(--cyan); border-color: rgba(78, 205, 196, 0.4); }
+
+    /* Global Search Box (Home & JEI) */
+    .search-section {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+    .search-box-wrapper {
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 14px 44px 14px 46px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.15s;
+    }
+    .search-input:focus {
+      border-color: var(--lime);
+      box-shadow: 0 0 0 3px var(--lime-glow);
+    }
+    .search-icon-left {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-dim);
+      font-size: 1.1rem;
+    }
+    .search-shortcut {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 2px 7px;
+      border-radius: 6px;
+      background: var(--panel-hover);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-dim);
+    }
+    .search-hints {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+    .search-hints span code {
+      color: var(--lime);
+      background: rgba(0,0,0,0.3);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+
+    /* Category Pills */
+    .category-pills {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-top: 12px;
+      padding-bottom: 4px;
+    }
+    .pill {
+      padding: 6px 14px;
+      border-radius: 99px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    .pill:hover {
+      color: var(--text);
+      border-color: var(--border-bright);
+      background: var(--panel-hover);
+    }
+    .pill.active {
+      background: var(--lime);
+      color: #0b0f0b;
+      border-color: var(--lime);
+      font-weight: 800;
+      box-shadow: 0 0 10px var(--lime-glow);
+    }
+
+    /* ========================================== */
+    /* HOME PAGE HUB STYLES                       */
+    /* ========================================== */
+    .home-portal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 18px;
+      margin-bottom: 32px;
+    }
+    .portal-card {
+      background: linear-gradient(150deg, var(--panel-card), var(--panel));
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+      position: relative;
+      overflow: hidden;
+    }
+    .portal-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: var(--card-accent, var(--lime));
+      opacity: 0.7;
+    }
+    .portal-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--card-accent, var(--lime));
+      box-shadow: 0 14px 35px rgba(0,0,0,0.45), 0 0 20px rgba(154, 212, 74, 0.1);
+    }
+    .portal-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .portal-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--bg);
+      border: 1px solid var(--border-bright);
+      display: grid;
+      place-items: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .portal-title-group h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .portal-title-group small {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .portal-desc {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+    .portal-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .portal-tag {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .portal-btn {
+      margin-top: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--lime);
+    }
+
+    /* Spotlight Section */
+    .home-section-title {
+      font-family: Georgia, serif;
+      font-size: 1.45rem;
+      color: #fff;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .home-section-sub {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 18px;
+    }
+
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+    .spotlight-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .spotlight-card:hover {
+      border-color: var(--lime);
+      transform: translateY(-2px);
+      background: var(--panel-hover);
+    }
+    .spotlight-slot {
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      background: #1c271a;
+      border: 2px solid var(--border-bright);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+    }
+    .spotlight-info h4 {
+      font-size: 0.92rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .spotlight-info small {
+      display: block;
+      font-size: 0.72rem;
+      color: var(--lime);
+      font-weight: 600;
+    }
+
+    /* ========================================== */
+    /* JEI EXPLORER STYLES (AUTHENTIC MC FEEL)     */
+    /* ========================================== */
+    .jei-workspace {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    @media (max-width: 992px) {
+      .jei-workspace { grid-template-columns: 1fr; }
+    }
+
+    /* JEI Bookmarks Drawer */
+    .jei-bookmarks-panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px;
+      position: sticky;
+      top: 20px;
+    }
+    .bookmarks-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .bookmarks-header h4 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+    }
+    .bookmarks-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+
+    /* JEI Item Catalog Grid */
+    .jei-catalog-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+    }
+    .jei-toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      background: var(--panel);
+      padding: 12px 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .jei-count-label {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .jei-count-label b {
+      color: var(--lime);
+    }
+
+    /* The Minecraft Item Slot Grid */
+    .jei-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 10px;
+    }
+    .jei-slot-card {
+      background: linear-gradient(160deg, #131b12, #182216);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.12s ease;
+      user-select: none;
+    }
+    .jei-slot-card:hover {
+      border-color: var(--lime);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.4), 0 0 10px var(--lime-glow);
+      background: var(--panel-hover);
+    }
+    .jei-slot-icon-box {
+      width: 38px;
+      height: 38px;
+      border-radius: 6px;
+      background: #0d130c;
+      border: 2px solid #2d3b29;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.6);
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .jei-slot-card:hover .jei-slot-icon-box {
+      border-color: var(--lime);
+    }
+    .jei-slot-details {
+      min-width: 0;
+      flex-grow: 1;
+    }
+    .jei-slot-name {
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+    }
+    .jei-slot-mod {
+      font-size: 0.7rem;
+      color: var(--lime);
+      font-weight: 600;
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Small Slot (for Bookmarks & Grid) */
+    .mc-slot {
+      width: 40px;
+      height: 40px;
+      background: #172015;
+      border: 2px solid var(--border);
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.15s;
+    }
+    .mc-slot:hover {
+      border-color: var(--lime);
+      transform: scale(1.08);
+      background: var(--panel-hover);
+      box-shadow: 0 0 10px var(--lime-glow);
+    }
+
+    /* ========================================== */
+    /* JEI RECIPE MODAL (AUTHENTIC MINECRAFT GUI) */
+    /* ========================================== */
+    #recipeModal {
+      width: min(840px, calc(100% - 24px));
+      border: 2px solid var(--border-bright);
+      border-radius: var(--radius-lg);
+      background: #141c13;
+      color: var(--text);
+      box-shadow: var(--shadow-lg);
+      padding: 0;
+      margin: auto;
+    }
+    #recipeModal::backdrop {
+      background: rgba(5, 8, 5, 0.88);
+      backdrop-filter: blur(10px);
+    }
+    .recipe-dialog-content {
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .recipe-dialog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .recipe-header-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .recipe-header-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      background: #0e150d;
+      border: 2px solid var(--lime);
+      display: grid;
+      place-items: center;
+      font-size: 1.8rem;
+      box-shadow: 0 0 15px var(--lime-glow);
+    }
+    .recipe-header-text h2 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+    }
+    .recipe-header-text small {
+      color: var(--lime);
+      font-weight: 700;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+    }
+    .recipe-dialog-close {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.3rem;
+      display: grid;
+      place-items: center;
+      transition: all 0.15s;
+    }
+    .recipe-dialog-close:hover {
+      color: #fff;
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    /* Recipe Type Tabs */
+    .recipe-tabs {
+      display: flex;
+      gap: 8px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      overflow-x: auto;
+    }
+    .recipe-tab-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s;
+    }
+    .recipe-tab-btn:hover {
+      border-color: var(--border-bright);
+      color: var(--text);
+    }
+    .recipe-tab-btn.active {
+      background: var(--panel-hover);
+      border-color: var(--lime);
+      color: #fff;
+    }
+
+    /* Minecraft GUI Crafting Matrix (3x3) */
+    .mc-crafting-panel {
+      background: #1e281c;
+      border: 2px solid #2d3e2a;
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .mc-grid-3x3 {
+      display: grid;
+      grid-template-columns: repeat(3, 52px);
+      grid-template-rows: repeat(3, 52px);
+      gap: 6px;
+    }
+    .mc-grid-slot {
+      width: 52px;
+      height: 52px;
+      background: #111810;
+      border: 2px solid #2d3b28;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.12s, transform 0.12s;
+    }
+    .mc-grid-slot:hover:not(:empty) {
+      border-color: var(--lime);
+      transform: scale(1.06);
+      background: #1a2519;
+      box-shadow: 0 0 10px var(--lime-glow);
+    }
+    .mc-arrow-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .mc-craft-arrow {
+      font-size: 2.2rem;
+      color: var(--lime);
+      font-weight: 900;
+      animation: arrowPulse 1.6s infinite ease-in-out;
+    }
+    @keyframes arrowPulse { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+    .mc-craft-type {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+    }
+    .mc-output-slot {
+      width: 68px;
+      height: 68px;
+      background: #0f180e;
+      border: 3px solid var(--lime);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      box-shadow: 0 0 18px var(--lime-glow), inset 0 2px 6px rgba(0,0,0,0.6);
+      position: relative;
+      cursor: pointer;
+    }
+    .mc-output-count {
+      position: absolute;
+      right: 6px;
+      bottom: 4px;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.9rem;
+      font-weight: 900;
+      color: #fff;
+      text-shadow: 1px 1px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+    }
+
+    /* Item Details & Stats Card inside Recipe Modal */
+    .recipe-meta-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .recipe-meta-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+    }
+    .recipe-meta-box small {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: var(--text-dim);
+      letter-spacing: 0.06em;
+    }
+    .recipe-meta-box b {
+      font-size: 0.92rem;
+      color: #fff;
+    }
+    .recipe-desc-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Minecraft Tooltip simulation */
+    .mc-tooltip {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #100010;
+      border: 2px solid #280050;
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 0.78rem;
+      color: #fff;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.8);
+      display: none;
+    }
+    .mc-tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -4px;
+      border-width: 4px;
+      border-style: solid;
+      border-color: #280050 transparent transparent transparent;
+    }
+    [data-tooltip]:hover .mc-tooltip {
+      display: block;
+    }
+
+    /* ========================================== */
+    /* OTHER SECTIONS (GUIDES, BOSSES, ETC.)      */
+    /* ========================================== */
+    .guide-container {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .guide-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+    .guide-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .guide-header-icon {
+      font-size: 2rem;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border-bright);
+    }
+    .guide-header-text h2 {
+      font-family: Georgia, serif;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .guide-header-text p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+      border-left: 2px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-left: 10px;
+    }
+    .timeline-step { position: relative; }
+    .timeline-dot {
+      position: absolute;
+      left: -35px;
+      top: 4px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 10px var(--lime-glow);
+      border: 2px solid var(--bg);
+    }
+    .timeline-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .timeline-body {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    /* Boss Bestiary Cards */
+    .boss-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 18px;
+    }
+    .boss-card {
+      background: linear-gradient(160deg, #1d181b, var(--panel));
+      border: 1px solid #4a2828;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .boss-card.aether { border-color: #31506b; background: linear-gradient(160deg, #131c26, var(--panel)); }
+    .boss-card.magic { border-color: #4b3263; background: linear-gradient(160deg, #1c152b, var(--panel)); }
+    .boss-card.cataclysm { border-color: #632d20; background: linear-gradient(160deg, #2b1712, var(--panel)); }
+    .boss-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .boss-name {
+      font-family: Georgia, serif;
+      font-size: 1.25rem;
+      color: #fff;
+      font-weight: 700;
+    }
+    .boss-origin {
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .boss-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      background: rgba(0,0,0,0.3);
+      padding: 10px 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .boss-stat-item small {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      font-weight: 700;
+    }
+    .boss-stat-item b { font-size: 0.88rem; color: #fff; }
+    .boss-tactic { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+    .boss-loot { font-size: 0.8rem; color: var(--lime); border-top: 1px dashed var(--border); padding-top: 8px; }
+
+    /* Keybind Table */
+    .keybind-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .keybind-table th, .keybind-table td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .keybind-table th {
+      background: var(--bg);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-dim);
+    }
+    .keybind-table tr:hover td { background: var(--panel-hover); }
+    .kbd {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border-bright);
+      box-shadow: 0 2px 0 var(--border);
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--lime);
+    }
+
+    /* Checklist */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    .check-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: var(--radius);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.15s;
+    }
+    .check-item:hover {
+      border-color: var(--lime);
+      background: var(--panel-hover);
+    }
+    .check-item input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--lime);
+      cursor: pointer;
+    }
+    .check-item.done {
+      border-color: var(--lime);
+      background: rgba(154, 212, 74, 0.06);
+    }
+    .check-item.done span {
+      text-decoration: line-through;
+      color: var(--text-dim);
+    }
+
+    /* Callout */
+    .callout {
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      background: rgba(154, 212, 74, 0.08);
+      border-left: 4px solid var(--lime);
+      color: #d8e2d4;
+      font-size: 0.88rem;
+    }
+    .callout.warning {
+      background: rgba(231, 111, 81, 0.08);
+      border-left-color: var(--red);
+      color: #ebd3cd;
+    }
+
+    /* Mod Index Grid */
+    .mod-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 16px;
+    }
+    .mod-card {
+      background: linear-gradient(160deg, var(--panel-card), var(--panel));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform 0.18s cubic-bezier(0.2, 0, 0, 1), border-color 0.18s;
+    }
+    .mod-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--lime);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4), 0 0 15px rgba(154, 212, 74, 0.15);
+    }
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: #253320;
+      border: 1px solid var(--border-bright);
+      color: var(--lime);
+      font-weight: 900;
+      font-size: 1rem;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .card-title-group h3 {
+      font-size: 1.08rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .card-version {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+    }
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+    .card-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .feature-tag {
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text-dim);
+    }
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 0.72rem;
+    }
+    .role-badge {
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 2px 8px;
+      border-radius: 99px;
+    }
+    .role-badge.content { background: rgba(154, 212, 74, 0.15); color: var(--lime); border: 1px solid rgba(154, 212, 74, 0.4); }
+    .role-badge.support { background: rgba(229, 184, 76, 0.12); color: var(--gold); border: 1px solid rgba(229, 184, 76, 0.35); }
+    .role-badge.performance { background: rgba(78, 205, 196, 0.15); color: var(--cyan); border: 1px solid rgba(78, 205, 196, 0.4); }
+
+    /* Mod Detail Modal */
+    dialog#modModal {
+      width: min(780px, calc(100% - 32px));
+      border: 1px solid var(--border-bright);
+      border-radius: var(--radius-lg);
+      background: var(--panel);
+      color: var(--text);
+      box-shadow: var(--shadow-lg);
+      padding: 0;
+      margin: auto;
+    }
+    dialog#modModal::backdrop {
+      background: rgba(5, 8, 4, 0.85);
+      backdrop-filter: blur(8px);
+    }
+    .modal-content {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      max-height: 88vh;
+      overflow-y: auto;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .modal-title-area h2 {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      color: #fff;
+    }
+    .modal-category-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--lime);
+    }
+    .modal-close-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1.3rem;
+      display: grid;
+      place-items: center;
+      transition: all 0.15s;
+    }
+    .modal-close-btn:hover {
+      color: #fff;
+      border-color: var(--red);
+      background: var(--red);
+    }
+    .modal-grid-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .modal-info-box {
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      background: var(--bg);
+      border: 1px solid var(--border);
+    }
+    .modal-info-box small {
+      display: block;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-dim);
+    }
+    .modal-info-box b { font-size: 0.88rem; color: #fff; }
+    .modal-section {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+    .modal-section h4 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .doc-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: var(--radius);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all 0.15s;
+    }
+    .doc-link-btn:hover {
+      border-color: var(--lime);
+      color: var(--lime);
+      text-decoration: none;
+      background: var(--panel-hover);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .app-layout { grid-template-columns: 1fr; }
+      .sidebar {
+        position: static;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-group {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      }
+      .modal-grid-info { grid-template-columns: 1fr; }
+      .mc-crafting-panel { flex-direction: column; gap: 16px; }
+    }
+  
+    /* ========================================== */
+    /* MINECRAFT ITEM SPRITES & TOOLTIPS          */
+    /* ========================================== */
+    .mc-item-sprite {
+      image-rendering: pixelated;
+      image-rendering: -moz-crisp-edges;
+      image-rendering: crisp-edges;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      user-select: none;
+      pointer-events: none;
+      display: block;
+    }
+    .jei-slot-icon-box .mc-item-sprite,
+    .spotlight-slot .mc-item-sprite,
+    .mc-slot .mc-item-sprite,
+    .mc-grid-slot .mc-item-sprite,
+    .mc-output-slot .mc-item-sprite,
+    .recipe-header-icon .mc-item-sprite {
+      max-width: 100%;
+      max-height: 100%;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,0.5));
+    }
+    .mc-grid-slot {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.1s ease;
+      background: #192218;
+      border: 2px solid #2d3b29;
+      box-shadow: inset 0 2px 4px rgba(0,0,0,0.5);
+      border-radius: 4px;
+      padding: 4px;
+    }
+    .mc-grid-slot.has-item:hover {
+      border-color: var(--lime);
+      background: #243322;
+      box-shadow: 0 0 8px var(--lime-glow), inset 0 1px 3px rgba(0,0,0,0.4);
+      transform: scale(1.06);
+      z-index: 5;
+    }
+    .mc-output-slot {
+      cursor: pointer;
+      transition: all 0.15s ease;
+      padding: 6px;
+    }
+    .mc-output-slot:hover {
+      border-color: var(--gold) !important;
+      box-shadow: 0 0 14px rgba(229, 184, 76, 0.4) !important;
+      transform: scale(1.05);
+    }
+    .recipe-nav-btns {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      margin-right: auto;
+      margin-left: 14px;
+    }
+    .recipe-nav-btn {
+      padding: 5px 12px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 6px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.12s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .recipe-nav-btn:hover:not(:disabled) {
+      background: var(--lime);
+      color: #0b0f0b;
+      border-color: var(--lime);
+      box-shadow: 0 0 10px var(--lime-glow);
+    }
+    .recipe-nav-btn:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+    
+    /* Authentic Minecraft Floating Tooltip */
+    #mcFloatingTooltip {
+      position: fixed;
+      pointer-events: none;
+      z-index: 999999;
+      background: rgba(16, 0, 16, 0.95);
+      border: 2px solid #280050;
+      border-radius: 4px;
+      box-shadow: 0 0 0 1px #5000aa, inset 0 0 0 1px #5000aa, 0 8px 24px rgba(0,0,0,0.85);
+      padding: 7px 11px;
+      display: none;
+      max-width: 300px;
+      font-family: inherit;
+      transform: translate(14px, 14px);
+    }
+    .mc-tip-title {
+      color: #FFAA00;
+      font-weight: 700;
+      font-size: 0.92rem;
+      line-height: 1.25;
+      text-shadow: 1px 1px 0 #000;
+    }
+    .mc-tip-title.legendary { color: #FFAA00; }
+    .mc-tip-title.epic { color: #d881f8; }
+    .mc-tip-title.rare { color: #55ffff; }
+    .mc-tip-title.uncommon { color: #55FF55; }
+    .mc-tip-title.common { color: #FFFFFF; }
+    .mc-tip-mod {
+      color: #5555FF;
+      font-style: italic;
+      font-size: 0.78rem;
+      margin-top: 3px;
+      text-shadow: 1px 1px 0 #000;
+    }
+    .mc-tip-hint {
+      color: #888888;
+      font-size: 0.7rem;
+      margin-top: 5px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 4px;
+    }
+    .boss-drop-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      margin: 3px 4px 3px 0;
+      background: rgba(19, 27, 18, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.12s ease;
+    }
+    .boss-drop-tag:hover {
+      border-color: var(--lime);
+      background: var(--panel-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 0 10px var(--lime-glow);
+      color: var(--lime);
+    }
+    .boss-drop-tag img {
+      width: 20px;
+      height: 20px;
+      image-rendering: pixelated;
+    }
+    .rec-use-item-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: rgba(0,0,0,0.25);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all 0.12s ease;
+      margin-bottom: 8px;
+    }
+    .rec-use-item-card:hover {
+      border-color: var(--lime);
+      background: var(--panel-hover);
+      transform: translateX(4px);
+    }
+    .rec-use-item-card img {
+      width: 28px;
+      height: 28px;
+      image-rendering: pixelated;
+    }
+    .rec-use-details {
+      flex-grow: 1;
+    }
+    .rec-use-name {
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.88rem;
+    }
+    .rec-use-desc {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+
+  
