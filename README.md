@@ -12,11 +12,27 @@ Open `index.html` or `minecraft_modpack_wiki.html` in a modern browser. Both ent
 - **Item information:** descriptions, practical uses, IDs, mods, categories, tags, rarity, tiers, and available equipment/ability information from the restored data.
 - **Browsing:** category filters, text and item-ID search, `@mod` search, `#tag` and `$tag` search, and page sizes of 96, 192, 480, or all items.
 - **Bookmarks:** a drawer beside the item grid, using the original `jei_bookmarks` browser storage key.
-- **Guides:** the Field Station home page and spotlight items, five-stage progression roadmap, boss encounters, magic and technology systems, dimensions and biomes, and game keybinds.
+- **Guides:** the Field Station home page and spotlight items, six-tab progression field guide, boss encounters, magic and technology systems, dimensions and biomes, and game keybinds.
 - **Objectives:** six early-game, nine boss, and five mastery objectives in a flat checklist, with completion shown in the sidebar.
 - **Mod directory:** 43 retained entries linking to project references in the optional tools.
 
 The website's hovered-item `R`, `U`, and `A` shortcuts have not been restored. The hotkeys guide also describes controls inside Minecraft.
+
+## Progression field guide
+
+Progression has six tabs: **Roadmap**, **Combat Loadouts**, **Tools & Technology**, **Magic & Alchemy**, **Exploration & Bosses**, and **Mod Paths**. Five readiness stages connect survival, a supplied base, Nether resources, advanced expeditions, and endgame projects. These are recommended milestones; technology, magic, and exploration can advance in parallel.
+
+- More than 120 distinct named items, with acquisition routes, practical reasons to use them, and upgrade tradeoffs.
+- Fifteen combat loadouts: melee, ranged, and spellcaster setups at every stage, including armor, support supplies, enchantments, and alternatives.
+- Fourteen expedition briefings separating entry requirements, recommended equipment, and rewards or follow-up crafts.
+- Nineteen mod paths and groups covering all 43 retained directory entries, including supporting mods without item progression.
+- Stage selectors, a mod selector, section cross-links, keyboard-accessible tabs, and responsive layouts. The selected topic and stage survive main-site navigation within the current page session.
+
+Item buttons open matching records in the existing explorer. Missing records remain readable text with full guide notes. Potion and spell-scroll variants remain text-only because a generic bottle or scroll record cannot identify their particular effects. The guide never fabricates a recipe to fill a missing record.
+
+The editorial structure takes inspiration from Terraria's [Class setups](https://terraria.fandom.com/wiki/Guide%3AClass_setups), [Game progression](https://terraria.fandom.com/wiki/Guide%3AGame_progression), and [Walkthrough](https://terraria.fandom.com/wiki/Guide%3AWalkthrough). All Minecraft recommendations are original. Mod-author documentation and versioned source references appear beside the relevant content. Checks include Create's heated brass recipe, Cataclysm's boss loot and Incinerator recipe, Ice and Fire's forge recipe/Bestiary, and Hexerei and Aether in-game guide text.
+
+Stage placement and loadout choices are editorial advice, not verified pack gates. Exact installed mod versions, configuration, and custom recipes are unavailable. Read local notes where those affect a recommendation. The retained So Many Enchants project reference could not be verified; its path makes no special-enchantment claims. Five existing encounter cards linked from progression were corrected to match the new guidance; other restored content and explorer recipes retain the accuracy limits below.
 
 ## Optional tools and saved data
 
@@ -44,7 +60,10 @@ The recipes and detailed guides were restored from the preserved original site. 
 | --- | --- |
 | `index.html`, `minecraft_modpack_wiki.html` | Main layout and detailed guide text; keep both entry points in sync |
 | `assets/restored-wiki.css` | Main site styles |
+| `assets/progression.css` | Progression tabs, responsive comparison tables, and guide cards |
 | `scripts/restored-wiki.js` | Main explorer, dialogs, search, bookmarks, and objective behavior |
+| `scripts/progression-data.js` | Shared progression items, stages, loadouts, guides, mod paths, and source references |
+| `scripts/progression.js` | Progression rendering, accessible tabs, stage/mod selection, and cross-links |
 | `scripts/restored_jei_database.js` | Restored 3,030-item recipe database |
 | `tools.html`, `assets/wiki.css`, `scripts/wiki.js` | Optional tools and their interface |
 | `scripts/jei_database.js` | Generated texture catalog, despite its historical filename |
@@ -60,25 +79,43 @@ node scripts/build_catalog.js
 
 This writes `scripts/jei_database.js` and `scripts/mod_directory.js`. It does not update the restored recipe database. `generate_full_jei.js`, `scripts/build_full_database.js`, and `update_wiki.js` currently delegate to this same texture builder; their original implementations remain in `archive/`.
 
+### Editing progression
+
+Edit the shared data in `scripts/progression-data.js`; neither HTML entry point duplicates the guide text. Item rows contain an editorial key, actual registry ID, display name, recommended starting stage, role, acquisition route, reasoning, and upgrade advice. Sources are keyed in the same file. Use `textOnly` for variants that cannot safely resolve to one explorer item. Do not substitute a similar-looking texture or invent an item ID to obtain a clickable recipe.
+
+Loadouts refer to item keys; guides and mod paths carry step lists and cross-links. Expedition `items` are first-attempt preparation, while `rewardItems` are rewards or subsequent crafts and must not overlap. New mod paths should map their `directoryIds` to retained directory entries. Run progression checks after editing to catch missing references and circular preparation requirements.
+
 ## Validation
 
 Basic retained data and structure checks:
 
 ```sh
-node --test tests/wiki.test.js
+node --test tests/wiki.test.js tests/progression.test.js
 node --check scripts/restored-wiki.js
 node --check scripts/wiki.js
+node --check scripts/progression-data.js
+node --check scripts/progression.js
 ```
 
 The older test suite checks retained article/catalog data and some shared structure; it is not a complete test of the restored explorer. `tests/restoration-browser.js` contains browser checks for the restored site, and `tests/restoration-result.html` records the successful headless Chrome run. To rerun those checks, load the browser-check script at the end of a temporary copy of the main HTML, before the page's load event, using a separate browser profile. The script replaces the page with its results.
 
 The older `browser-check.js`, `browser-mobile-check.js`, and desktop/mobile screenshots describe the replacement interface and have not been updated for the restored main site.
 
+For the expanded progression UI, install the `chrome-devtools-mcp` CLI and run:
+
+```sh
+node tests/run-progression-browser.js
+```
+
+The runner opens and closes a dedicated test tab, checks both entry points at desktop and mobile sizes with network access disabled, and preserves saved progress and bookmarks. It verifies tab/stage navigation, every authored guide cross-link, mod selection, item dialogs, missing-record behavior, image loading, and overflow. Results are written to `tests/progression-browser-results.json` with `tests/progression-*.png` screenshots. If the global CLI is installed outside the runner's detected locations, set `CHROME_DEVTOOLS_CLI` to its `build/src/bin/chrome-devtools.js` file. The injectable checks are in `tests/progression-browser.js`.
+
 ## Static hosting
 
 Publish the three entry points (`index.html`, `minecraft_modpack_wiki.html`, and `tools.html`), `modpack_field_guide.ico`, the `assets/` directory, and these browser scripts from `scripts/`:
 
 - `restored-wiki.js`
+- `progression-data.js`
+- `progression.js`
 - `restored_jei_database.js`
 - `mod_directory.js`
 - `wiki.js`

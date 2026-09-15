@@ -6988,7 +6988,11 @@ function navigateTo(viewId) {
     renderMods();
   }
 
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (viewId === "progression-view" && window.matchMedia("(max-width: 900px)").matches) {
+    target.scrollIntoView({ block: "start", behavior: "smooth" });
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 }
 
 // Make navigateTo globally accessible
