@@ -125,20 +125,20 @@ function getItemMeta(idOrName) {
       name: meta.name,
       mod: meta.mod,
       file: meta.file,
-      iconUrl: "assets/items/" + meta.file,
+      iconUrl: ItemIcons.get(idOrName)?.file || null,
       tier: meta.tier || "Standard",
       rarity: meta.rarity || "common"
     };
   }
   const dbItem = jeiItemMap.get(idOrName) || jeiItemMap.get(idOrName.toLowerCase()) || jeiDatabase.find(x => x.id === idOrName || x.name.toLowerCase() === idOrName.toLowerCase());
   if (dbItem) {
-    const file = dbItem.iconFile || (ITEM_REGISTRY[dbItem.id] ? ITEM_REGISTRY[dbItem.id].file : "minecraft_enchanted_book.png");
+    const file = ItemIcons.get(dbItem.id)?.file || null;
     return {
       id: dbItem.id,
       name: dbItem.name,
       mod: dbItem.mod,
       file: file,
-      iconUrl: "assets/items/" + file,
+      iconUrl: ItemIcons.get(dbItem.id)?.file || null,
       tier: dbItem.tier || "Standard",
       rarity: dbItem.rarity || "rare"
     };
@@ -150,27 +150,17 @@ function getItemMeta(idOrName) {
     id: idOrName,
     name: nameTitle,
     mod: modTitle,
-    file: "minecraft_enchanted_book.png",
-    iconUrl: "assets/items/minecraft_enchanted_book.png",
+    file: null,
+    iconUrl: null,
     tier: "Item",
     rarity: "common"
   };
 }
 
-// Global fallback image handler for sprites
-window.addEventListener("error", (e) => {
-  if (e.target && e.target.tagName === "IMG" && e.target.classList.contains("mc-item-sprite")) {
-    if (!e.target.dataset.fallbackApplied) {
-      e.target.dataset.fallbackApplied = "true";
-      e.target.src = "assets/items/minecraft_enchanted_book.png";
-    }
-  }
-}, true);
-
 function renderItemSprite(idOrName, customClass = "") {
   const meta = getItemMeta(idOrName);
   if (!meta) return "";
-  return `<img src="${meta.iconUrl}" class="mc-item-sprite ${customClass}" alt="${meta.name}" loading="lazy">`;
+  return ItemIcons.render(meta.id, meta.name, `mc-item-sprite ${customClass}`);
 }
 
 /* THE COMPLETE JEI DATABASE */
@@ -6949,9 +6939,30 @@ const jeiFallbackDatabase = [
   }
 ];
 
-const jeiDatabase = (typeof window !== "undefined" && window.JEI_FULL_DATABASE && Array.isArray(window.JEI_FULL_DATABASE) && window.JEI_FULL_DATABASE.length > 0)
+const restoredJeiDatabase = (typeof window !== "undefined" && window.JEI_FULL_DATABASE && Array.isArray(window.JEI_FULL_DATABASE) && window.JEI_FULL_DATABASE.length > 0)
   ? window.JEI_FULL_DATABASE
   : jeiFallbackDatabase;
+const jeiDatabase = [...restoredJeiDatabase];
+const restoredJeiIds = new Set(restoredJeiDatabase.map(item => item.id));
+(window.WIKI_CATALOG || []).forEach(item => {
+  if (restoredJeiIds.has(item.id)) return;
+  jeiDatabase.push({
+    id: item.id,
+    name: item.name,
+    mod: item.group,
+    modId: item.group,
+    iconFile: item.file,
+    category: 'catalog',
+    tags: [`#${item.group}`, '#catalog'],
+    tier: 'Inventory catalog',
+    rarity: 'common',
+    description: 'Verified item identity from the installed-version Minecraft or mod assets.',
+    craftType: 'Check JEI in the installed pack for recipes and uses.',
+    outputCount: 1,
+    grid: [],
+    uses: ['Browse recipes and uses in JEI; pack configuration may change availability.']
+  });
+});
 
 // Fast O(1) item index map for instant lookups & recipes
 const jeiItemMap = new Map();
@@ -7203,6 +7214,53 @@ if (jeiCategoryPills) {
       jeiCategoryPills.querySelectorAll(".pill").forEach(p => p.classList.remove("active"));
       e.target.classList.add("active");
       jeiActiveFilter = e.target.dataset.filter;
+      jeiCurrentPage = 1;
+      renderJEI();
+    }
+  });
+}
+
+const jeiFirstPageButton = document.getElementById("jeiFirstPage");
+const jeiPrevPageButton = document.getElementById("jeiPrevPage");
+const jeiNextPageButton = document.getElementById("jeiNextPage");
+const jeiLastPageButton = document.getElementById("jeiLastPage");
+const jeiPageSizeSelect = document.getElementById("jeiPageSize");
+
+if (jeiFirstPageButton) {
+  jeiFirstPageButton.addEventListener("click", () => {
+    jeiCurrentPage = 1;
+    renderJEI();
+  });
+}
+
+if (jeiPrevPageButton) {
+  jeiPrevPageButton.addEventListener("click", () => {
+    jeiCurrentPage--;
+    renderJEI();
+  });
+}
+
+if (jeiNextPageButton) {
+  jeiNextPageButton.addEventListener("click", () => {
+    jeiCurrentPage++;
+    renderJEI();
+  });
+}
+
+if (jeiLastPageButton) {
+  jeiLastPageButton.addEventListener("click", () => {
+    // renderJEI clamps this value to the last page after applying the active search/filter.
+    jeiCurrentPage = Number.MAX_SAFE_INTEGER;
+    renderJEI();
+  });
+}
+
+if (jeiPageSizeSelect) {
+  jeiPageSizeSelect.addEventListener("change", (e) => {
+    const selectedSize = Number.parseInt(e.target.value, 10);
+    if (!Number.isNaN(selectedSize) && selectedSize > 0) {
+      jeiPageSize = selectedSize;
+      jeiCurrentPage = 1;
       renderJEI();
     }
   });

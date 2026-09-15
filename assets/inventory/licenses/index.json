@@ -1,0 +1,197 @@
+[
+  {
+    "id": "minecraft",
+    "name": "Minecraft",
+    "projectUrl": "https://www.minecraft.net/",
+    "version": "1.20.1",
+    "license": {
+      "id": "Mojang",
+      "url": "https://www.minecraft.net/usage-guidelines"
+    },
+    "noticeStatus": "Publisher license reference retained; no repository notice source."
+  },
+  {
+    "id": "alexsmobs",
+    "name": "Alex's Mobs",
+    "projectUrl": "https://modrinth.com/mod/alexs-mobs",
+    "version": "1.22.9",
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "noticeStatus": "Publisher license reference retained; repository notice unavailable (HTTP Error 404: Not Found)."
+  },
+  {
+    "id": "create",
+    "name": "Create",
+    "projectUrl": "https://modrinth.com/mod/create",
+    "version": "mc1.20.1-6.0.8",
+    "license": {
+      "id": "LicenseRef-Create-Mod-License",
+      "name": "",
+      "url": "https://github.com/Creators-of-Create/Create/blob/HEAD/LICENSE.md"
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/create/LICENSE.md",
+    "url": "https://github.com/Creators-of-Create/Create/blob/mc1.20.1/dev/LICENSE.md",
+    "gitBlob": "09585293b6f48832f0d37e731e19847f9bd1edfe",
+    "sha256": "2382116a50f4779cd338bcb8d8ab50363f2f72805f0bf1d69d169dfc781f3724"
+  },
+  {
+    "id": "deeperdarker",
+    "name": "Deeper and Darker",
+    "projectUrl": "https://modrinth.com/mod/deeperdarker",
+    "version": "1.3.3-forge+1.20.1",
+    "license": {
+      "id": "AGPL-3.0-only",
+      "name": "GNU Affero General Public License v3.0 only",
+      "url": null
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/deeperdarker/LICENSE",
+    "url": "https://github.com/KyaniteMods/DeeperAndDarker/blob/fabric-1.20.x-2.0.0s/LICENSE",
+    "gitBlob": "23262e21fe5a4adfd6863f6df0c450b2809f4c92",
+    "sha256": "028ee4f78aa76abbc88c80322ea1f80e69315a4fa76b263b1e8b4438645b9f2e"
+  },
+  {
+    "id": "farmersdelight",
+    "name": "Farmer's Delight",
+    "projectUrl": "https://modrinth.com/mod/farmers-delight",
+    "version": "1.20.1-1.3.4",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/farmersdelight/LICENSE",
+    "url": "https://github.com/vectorwing/FarmersDelight/blob/1.20/LICENSE",
+    "gitBlob": "3bd0b0b06942d1e3069b31a5e5de6a1c8b765ea9",
+    "sha256": "3ff766f3ab1fd7dad26e8f176c5e4af6bcbf8bb1208d26f573d77b48b13188ac"
+  },
+  {
+    "id": "hexerei",
+    "name": "Hexerei",
+    "projectUrl": "https://modrinth.com/mod/hexerei",
+    "version": "0.4.2.2",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "noticeStatus": "Publisher license reference retained; repository notice unavailable (HTTP Error 404: Not Found)."
+  },
+  {
+    "id": "iceandfire",
+    "name": "Ice and Fire: Dragons",
+    "projectUrl": "https://modrinth.com/mod/ice-and-fire-dragons",
+    "version": "2.1.13-1.20.1-beta-5",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/iceandfire/LICENSE",
+    "url": "https://github.com/AlexModGuy/Ice_and_Fire/blob/1.20/LICENSE",
+    "gitBlob": "0a041280bd00a9d068f503b8ee7ce35214bd24a1",
+    "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+  },
+  {
+    "id": "irons_spellbooks",
+    "name": "Iron's Spells 'n Spellbooks",
+    "projectUrl": "https://modrinth.com/mod/irons-spells-n-spellbooks",
+    "version": "1.20.1-3.16.3",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://github.com/iron431/Irons-Spells-n-Spellbooks#readme"
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/irons_spellbooks/LICENSE.md",
+    "url": "https://github.com/iron431/irons-spells-n-spellbooks/blob/1.20.1-legacy/LICENSE.md",
+    "gitBlob": "15096846b294c5f468b6a29aa476b8498d80fed8",
+    "sha256": "ebe3f96dd7684dfa6d46b0c484fa128f75b4d02052b8799a91ffbd6153fdf15b"
+  },
+  {
+    "id": "cataclysm",
+    "name": "L_Ender's Cataclysm",
+    "projectUrl": "https://modrinth.com/mod/l_enders-cataclysm",
+    "version": "3.31",
+    "license": {
+      "id": "CC-BY-NC-ND-4.0",
+      "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+      "url": null
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/cataclysm/LICENSE.txt",
+    "url": "https://github.com/lender544/new1.20.1/blob/master/LICENSE.txt",
+    "gitBlob": "d2a49a50e6d4cdb92084b2fa5daaf8548d12012f",
+    "sha256": "de06070a9d5fa5eb64163a41ee3e2b152c8368698b08141659b74a7cce8c7f93"
+  },
+  {
+    "id": "sophisticatedbackpacks",
+    "name": "Sophisticated Backpacks",
+    "projectUrl": "https://modrinth.com/mod/sophisticated-backpacks",
+    "version": "1.20.1-3.26.3.2157",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/sophisticatedbackpacks/LICENSE.md",
+    "url": "https://github.com/P3pp3rF1y/SophisticatedBackpacks/blob/1.20.x/LICENSE.md",
+    "gitBlob": "6aa6ed9f72720c774157620e1c2102920b3e16a1",
+    "sha256": "45fa717328fed2916961bd13ec2d33d7495ff3e0068e5df76ed905c39b14b40b"
+  },
+  {
+    "id": "aether",
+    "name": "The Aether",
+    "projectUrl": "https://modrinth.com/mod/aether",
+    "version": "1.20.1-1.5.2-neoforge",
+    "license": {
+      "id": "LicenseRef-Custom",
+      "name": "",
+      "url": "https://github.com/The-Aether-Team/The-Aether#scroll-license-information"
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/aether/LICENSE.txt",
+    "url": "https://github.com/The-Aether-Team/The-Aether/blob/1.20.1-develop/LICENSE.txt",
+    "gitBlob": "0a041280bd00a9d068f503b8ee7ce35214bd24a1",
+    "sha256": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118"
+  },
+  {
+    "id": "tconstruct",
+    "name": "Tinkers' Construct",
+    "projectUrl": "https://modrinth.com/mod/tinkers-construct",
+    "version": "3.11.2.166",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/tconstruct/LICENSE",
+    "url": "https://github.com/SlimeKnights/TinkersConstruct/blob/1.20.1/LICENSE",
+    "gitBlob": "80ebd016f680011331b0a3f13d988e1961ce029f",
+    "sha256": "fd4e75ff5c8bfa350f147387fe6689f691a2ddbab2243b1b244f5840fa801b6b"
+  },
+  {
+    "id": "waystones",
+    "name": "Waystones",
+    "projectUrl": "https://modrinth.com/mod/waystones",
+    "version": "14.1.21+forge-1.20.1",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://mods.twelveiterations.com/permissions"
+    },
+    "noticeStatus": "Upstream repository snapshot, reviewed 2026-09-15",
+    "file": "assets/inventory/licenses/waystones/LICENSE",
+    "url": "https://github.com/TwelveIterations/Waystones/blob/26.2/LICENSE",
+    "gitBlob": "c5d24e307950dd7b38d9c16312543c9f0f94b7e7",
+    "sha256": "65754ce1f0e555599c7498d789ebfe8e78ea71c58da7382a963d4226fc2f6dbb"
+  }
+]

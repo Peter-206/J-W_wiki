@@ -26,7 +26,7 @@
   function itemLabel(key, compact = false) {
     const item = data.items[key];
     const record = item.textOnly ? null : database.get(item.id);
-    const sprite = record && record.iconFile ? `<img src="assets/items/${esc(record.iconFile)}" alt="" loading="lazy" width="28" height="28">` : '<span class="pg-item-placeholder" aria-hidden="true">◆</span>';
+    const sprite = item.textOnly ? '' : ItemIcons.render(item.id, item.name);
     const content = `${sprite}<span>${esc(item.name)}${compact ? '' : `<small>${esc(item.mod)}</small>`}</span>`;
     return record
       ? `<button type="button" class="pg-item-label" data-item-id="${esc(item.id)}" aria-label="Open ${esc(item.name)} in the item explorer">${content}<span class="pg-open-icon" aria-hidden="true">↗</span></button>`

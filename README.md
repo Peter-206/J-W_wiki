@@ -36,9 +36,9 @@ Stage placement and loadout choices are editorial advice, not verified pack gate
 
 ## Optional tools and saved data
 
-Follow **Texture catalog & saved tools** in the sidebar, or open `tools.html#catalog`, for the retained texture catalog. `tools.html` also provides separate page bookmarks, personal notes, JSON backup import/export, a checklist, directory search, and the Sources & Accuracy page.
+Follow **Inventory icons & saved tools** in the sidebar, or open `tools.html#catalog`, for the inventory icon catalog. `tools.html` also provides separate page bookmarks, personal notes, JSON backup import/export, a checklist, directory search, and the Sources & Accuracy page.
 
-The texture catalog indexes artwork by filename; its entries can include model parts and animation frames. It is separate from the item/recipe database. The replacement short articles are no longer loaded, although their source file and the older article-search interface remain.
+The inventory icon catalog includes only exact item-model/translation matches from the audited Minecraft 1.20.1 sources. It excludes raw model parts and animation sheets. Items without a verified inventory sprite show **Icon unavailable**. Old texture links resolve to an exact matched item or an unavailable page that preserves saved notes and bookmarks. The replacement short articles are no longer loaded, although their source file and the older article-search interface remain.
 
 Bookmarks, notes, and progress stay in the browser and origin where they were saved:
 
@@ -66,18 +66,39 @@ The recipes and detailed guides were restored from the preserved original site. 
 | `scripts/progression.js` | Progression rendering, accessible tabs, stage/mod selection, and cross-links |
 | `scripts/restored_jei_database.js` | Restored 3,030-item recipe database |
 | `tools.html`, `assets/wiki.css`, `scripts/wiki.js` | Optional tools and their interface |
-| `scripts/jei_database.js` | Generated texture catalog, despite its historical filename |
+| `scripts/jei_database.js` | Generated inventory icon catalog, despite its historical filename |
+| `scripts/inventory-icons.json`, `scripts/icon-sources.json` | Per-item verification evidence and pinned publisher artifact sources |
+| `scripts/inventory-icons.js`, `scripts/item-icons.js`, `assets/item-icons.css` | Offline icon manifest, shared renderer, and accessible placeholders |
 | `scripts/mods.json`, `scripts/mod_directory.js` | Directory source and generated browser data |
 | `scripts/restored_articles.js` | Empty article list loaded by the optional tools |
 | `scripts/articles.js` | Retained replacement articles; not loaded by either live entry point |
 
-To rebuild the texture catalog and mod directory, with Node.js installed:
+To rebuild the inventory catalog, browser icon manifest, coverage report, and mod directory from the committed verification data, with Node.js installed:
 
 ```sh
 node scripts/build_catalog.js
 ```
 
-This writes `scripts/jei_database.js` and `scripts/mod_directory.js`. It does not update the restored recipe database. `generate_full_jei.js`, `scripts/build_full_database.js`, and `update_wiki.js` currently delegate to this same texture builder; their original implementations remain in `archive/`.
+This writes `scripts/jei_database.js`, `scripts/inventory-icons.js`, `scripts/mod_directory.js`, and `ICON_COVERAGE.md`. It does not update the restored recipe database. `generate_full_jei.js`, `scripts/build_full_database.js`, and `update_wiki.js` currently delegate to this same catalog builder; their original implementations remain in `archive/`.
+
+### Inventory icon verification
+
+See [ICON_COVERAGE.md](ICON_COVERAGE.md) for counts, the project audit, source links, and limitations. All live item-image views use the shared registry-ID mapping. Verified inventory sprites are preferred; entries without one use a matching `assets/items/<namespace>_<item>.png` image when available.
+
+Verified generated icons are resolved from publisher JARs after checking their published artifact hashes, exact item model, inherited texture references, and matching item/block translation. Multiple declared layers are composited and animated textures use their declared first frame. Model parts, block faces, runtime tints, custom 3D renderers, and unsupported item states remain placeholders. No similar-looking sprite or generic enchanted book is substituted.
+
+The audit covers the directory's 49 mod entries plus vanilla Minecraft. Published Forge-compatible 1.20.1 releases are pinned; this is not confirmation of the user's installed versions. Unresolved projects are listed explicitly. Model/translation matches establish artwork identities, not complete registry membership or recipe accuracy.
+
+To regenerate sprites and per-item evidence from the pinned sources (Python 3.11+, Pillow, Node.js, and internet access on the first run):
+
+```sh
+python scripts/build_inventory_icons.py
+node scripts/build_catalog.js
+```
+
+Downloads are hash-checked and cached in `.cache/inventory-icons/`; no mod code is executed. Normal site use needs neither Python nor network access. The generated manifest records source releases, model and texture paths, verification method, and image SHA-256 hashes. Original artifact license files, where supplied, are retained under `assets/inventory/licenses/`; project license references appear on catalog detail pages. [Artwork attribution](assets/inventory/ATTRIBUTION.md) also links retained upstream notice snapshots; their source URLs, Git blob IDs, and checksums are recorded separately from release-artifact evidence.
+
+`python scripts/audit_icon_sources.py` refreshes the source lock and can select newer releases. Review project identity, version compatibility, runtime color registrations, and license changes before rebuilding from a refreshed lock. The explicitly reviewed slug mapping prevents similarly named projects from being substituted automatically.
 
 ### Editing progression
 
@@ -90,14 +111,14 @@ Loadouts refer to item keys; guides and mod paths carry step lists and cross-lin
 Basic retained data and structure checks:
 
 ```sh
-node --test tests/wiki.test.js tests/progression.test.js
+node --test tests/wiki.test.js tests/progression.test.js tests/item-icons.test.js
 node --check scripts/restored-wiki.js
 node --check scripts/wiki.js
 node --check scripts/progression-data.js
 node --check scripts/progression.js
 ```
 
-The older test suite checks retained article/catalog data and some shared structure; it is not a complete test of the restored explorer. `tests/restoration-browser.js` contains browser checks for the restored site, and `tests/restoration-result.html` records the successful headless Chrome run. To rerun those checks, load the browser-check script at the end of a temporary copy of the main HTML, before the page's load event, using a separate browser profile. The script replaces the page with its results.
+The tests check retained articles, inventory provenance, checksums, missing-icon behavior, script order, and progression structure; it is not a complete test of the restored explorer. `tests/restoration-browser.js` contains browser checks for the restored site, and `tests/restoration-result.html` records the successful headless Chrome run. To rerun those checks, load the browser-check script at the end of a temporary copy of the main HTML, before the page's load event, using a separate browser profile. The script replaces the page with its results.
 
 The older `browser-check.js`, `browser-mobile-check.js`, and desktop/mobile screenshots describe the replacement interface and have not been updated for the restored main site.
 
@@ -109,10 +130,20 @@ node tests/run-progression-browser.js
 
 The runner opens and closes a dedicated test tab, checks both entry points at desktop and mobile sizes with network access disabled, and preserves saved progress and bookmarks. It verifies tab/stage navigation, every authored guide cross-link, mod selection, item dialogs, missing-record behavior, image loading, and overflow. Results are written to `tests/progression-browser-results.json` with `tests/progression-*.png` screenshots. If the global CLI is installed outside the runner's detected locations, set `CHROME_DEVTOOLS_CLI` to its `build/src/bin/chrome-devtools.js` file. The injectable checks are in `tests/progression-browser.js`.
 
+For inventory imagery and catalog compatibility checks, run:
+
+```sh
+node tests/run-inventory-browser.js
+```
+
+This uses the same Chrome CLI setup and a dedicated tab. It checks all verified PNGs offline, all three entry points at desktop/mobile sizes, recipe navigation, provenance links, legacy texture notes, image-error placeholders, saved-state preservation, and overflow. Results and screenshots go to `.cache/inventory-browser/`.
+
 ## Static hosting
 
 Publish the three entry points (`index.html`, `minecraft_modpack_wiki.html`, and `tools.html`), `modpack_field_guide.ico`, the `assets/` directory, and these browser scripts from `scripts/`:
 
+- `inventory-icons.js`
+- `item-icons.js`
 - `restored-wiki.js`
 - `progression-data.js`
 - `progression.js`

@@ -11,9 +11,17 @@ test('each article has primary sources, content, and valid related pages',()=>{
   assert.equal(new Set(articles.map(a=>a.id)).size,articles.length);
   for(const a of articles){assert.ok(a.sections.length);assert.ok(a.sources.length);for(const [,url] of a.sources)assert.equal(new URL(url).protocol,'https:');for(const id of a.related)assert.ok(articles.some(a=>a.id===id),id);}
 });
-test('catalog is an asset index with real images and no invented gameplay',()=>{
+test('catalog contains matched inventory identities and honest missing icons',()=>{
+  const manifest = require('../scripts/inventory-icons.json').items;
   assert.ok(catalog.length>0);assert.equal(new Set(catalog.map(x=>x.id)).size,catalog.length);
-  for(const item of catalog){assert.ok(fs.existsSync(path.join(root,'assets/items',item.file)),item.file);assert.deepEqual(Object.keys(item).sort(),['file','group','id','name']);}
+  for(const item of catalog){
+    assert.ok(manifest[item.id]?.identityVerified,item.id);
+    if(item.file) {
+      assert.equal(manifest[item.id].status,'verified');
+      assert.ok(fs.existsSync(path.join(root,item.file)),item.file);
+    } else assert.equal(manifest[item.id].status,'unavailable');
+    assert.deepEqual(Object.keys(item).sort(),['file','group','id','name']);
+  }
 });
 test('entry points match and only load the maintained scripts',()=>{
   const html=fs.readFileSync(path.join(root,'index.html'),'utf8');

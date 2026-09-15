@@ -8,7 +8,7 @@ const database = require('../scripts/restored_jei_database.js');
 const directory = require('../scripts/mods.json');
 const root = path.join(__dirname, '..');
 
-test('recommendations have acquisition, reasoning, upgrades, sources, and real available sprites', () => {
+test('recommendations have acquisition, reasoning, upgrades, sources, and explicit icon decisions', () => {
   assert.ok(new Set(Object.values(guide.items).map(item => item.id)).size >= 80);
   const db = new Map(database.map(item => [item.id, item]));
   for (const [key, item] of Object.entries(guide.items)) {
@@ -19,7 +19,12 @@ test('recommendations have acquisition, reasoning, upgrades, sources, and real a
     assert.ok(item.stage >= 1 && item.stage <= 5, key);
     assert.ok(item.sources.length, key);
     for (const source of item.sources) assert.ok(guide.sources[source], `${key}: ${source}`);
-    if (!item.textOnly && db.has(item.id)) assert.ok(fs.existsSync(path.join(root, 'assets/items', db.get(item.id).iconFile)), item.id);
+    if (!item.textOnly) {
+      const icon = require('../scripts/inventory-icons.json').items[item.id];
+      assert.ok(icon, item.id);
+      if (icon.status === 'verified') assert.ok(fs.existsSync(path.join(root, icon.file)), item.id);
+      else assert.ok(icon.reason, item.id);
+    }
   }
   for (const key of ['firePotion', 'slowPotion', 'breathPotion', 'scroll', 'missile', 'firebolt', 'heal', 'teleport']) {
     assert.equal(guide.items[key].textOnly, true, 'NBT variants must not open a generic bottle or blank scroll recipe');

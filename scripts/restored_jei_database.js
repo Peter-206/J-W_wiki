@@ -1,4 +1,4 @@
-/* Auto-generated complete JEI database with 3030 verified items */
+/* Restored 3030-record database; recipes and registry membership are unverified. Images resolve through inventory-icons.js. */
 (function (root, factory) {
   if (typeof module === 'object' && module.exports) {
     module.exports = factory();
