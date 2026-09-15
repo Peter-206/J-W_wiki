@@ -52,7 +52,7 @@
       </button>
       <button class="nav-btn" data-view="mods-view">
         <span>📚 Mod Technical Index</span>
-        <span class="badge">43</span>
+        <span class="badge">49</span>
       </button>
     </div>
     
@@ -95,6 +95,7 @@
       <div class="search-section">
         <div class="search-box-wrapper">
           <span class="search-icon-left">🔍</span>
+          <label for="homeSearchInput" class="visually-hidden">Search modpack items and mechanics</label>
           <input type="search" id="homeSearchInput" class="search-input" placeholder="Search any item (e.g. 'incinerator', 'dragon forge', 'water wheel', 'spellbook', '@create')..." autocomplete="off">
           <span class="search-shortcut">/</span>
         </div>
@@ -233,6 +234,7 @@
       <div class="search-section">
         <div class="search-box-wrapper">
           <span class="search-icon-left">🔍</span>
+          <label for="jeiSearchInput" class="visually-hidden">Search items, tags, or mod IDs</label>
           <input type="search" id="jeiSearchInput" class="search-input" placeholder="Search items, tags, or mod IDs (e.g. 'incinerator', '@create', '#weapon', '#magic', '$food')..." autocomplete="off">
           <span class="search-shortcut">/</span>
         </div>
@@ -289,7 +291,7 @@
               <button id="jeiLastPage" class="doc-link-btn" style="padding:5px 12px; cursor:pointer;" title="Last Page">Last ⏭</button>
             </div>
             <div style="display:flex; align-items:center; gap:8px;">
-              <span style="font-size:0.8rem; color:var(--text-muted);">Per Page:</span>
+              <label for="jeiPageSize" style="font-size:0.8rem; color:var(--text-muted);">Per Page:</label>
               <select id="jeiPageSize" style="background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:4px; padding:4px 8px; font-size:0.85rem; cursor:pointer;">
                 <option value="96" selected>96 items</option>
                 <option value="192">192 items</option>
