@@ -8,6 +8,7 @@
   <title>Modpack Field Guide & JEI Encyclopedia | Minecraft 1.20.1</title>
   <link rel="stylesheet" href="assets/restored-wiki.css">
 <link rel="stylesheet" href="assets/progression.css">
+<link rel="stylesheet" href="assets/magic.css">
   <script src="scripts/restored_jei_database.js"></script>
   <script src="scripts/jei_database.js"></script>
 <link rel="stylesheet" href="assets/item-icons.css"><script src="scripts/inventory-icons.js"></script><script src="scripts/item-icons.js"></script></head>
@@ -39,34 +40,16 @@
       <button class="nav-btn" data-view="bosses-view">
         <span>🐉 Boss Bestiary</span>
       </button>
-      <button class="nav-btn" data-view="systems-view">
-        <span>⚙️ Magic & Tech Systems</span>
+      <button class="nav-btn" data-view="magic-view">
+        <span>✨ Magic</span>
+        <!-- TODO(MAGIC_NEW_BADGE): Remove this marker after the night of 2026-09-16. -->
+        <span class="release-badge">NEW</span>
       </button>
       <button class="nav-btn" data-view="dimensions-view">
         <span>🌌 Dimensions & Biomes</span>
       </button>
-      <button class="nav-btn" data-view="hotkeys-view">
-        <span>⌨️ Hotkeys & Keybinds</span>
-      </button>
-      <button class="nav-btn" data-view="checklist-view">
-        <span>🏆 Pack Conquest Tracker</span>
-      </button>
-      <button class="nav-btn" data-view="mods-view">
-        <span>📚 Mod Technical Index</span>
-        <span class="badge">40+</span>
-      </button>
     </div>
-    
-    <a class="nav-btn" href="tools.html#catalog">Inventory icons &amp; saved tools</a><div class="sidebar-footer">
-      <div class="progress-pill">
-        <div style="display:flex; justify-content:space-between; font-size:0.75rem;">
-          <span style="color:var(--text-dim); font-weight:700;">Pack Completion</span>
-          <span id="sideProgressText" style="color:var(--lime); font-weight:800;">0%</span>
-        </div>
-        <div class="progress-bar-bg">
-          <div class="progress-bar-fill" id="sideProgressBar"></div>
-        </div>
-      </div>
+    <div class="sidebar-footer">
       <p style="margin-top:10px;"><strong>100% Offline Wiki</strong><br>Instant item recipes, boss strategies, and mechanical guides.</p>
     </div>
   </aside>
@@ -164,22 +147,24 @@
           <div class="portal-btn">View Progression Roadmap →</div>
         </article>
 
-        <!-- Magic & Tech Engineering -->
-        <article class="portal-card" style="--card-accent: var(--cyan);" onclick="navigateTo('systems-view')">
+        <!-- Magic -->
+        <article class="portal-card" style="--card-accent: var(--cyan);" onclick="navigateTo('magic-view')">
           <div class="portal-head">
             <div class="portal-icon">⚙️</div>
             <div class="portal-title-group">
-              <h3>Magic & Tech Systems</h3>
-              <small>Kinematics & Sorcery</small>
+              <h3>Magic</h3>
+              <small>Iron's Spells 'n Spellbooks</small>
             </div>
+            <!-- TODO(MAGIC_NEW_BADGE): Remove this marker after the night of 2026-09-16. -->
+            <span class="release-badge">NEW</span>
           </div>
-          <p class="portal-desc">Smeltery alloy blueprints, Create rotational speed gear shifting ratios, 10 Iron's Spells magic schools, and Hexerei broom brewing.</p>
+          <p class="portal-desc">Choose a magical school and learn the strengths of fire, ice, lightning, holy, and ender spells.</p>
           <div class="portal-tags">
-            <span class="portal-tag">Tinkers' Alloys</span>
-            <span class="portal-tag">Create SU/RPM</span>
             <span class="portal-tag">Spell Schools</span>
+            <span class="portal-tag">Casting</span>
+            <span class="portal-tag">Mobility</span>
           </div>
-          <div class="portal-btn">Open Engineering Guide →</div>
+          <div class="portal-btn">Open Magic Guide →</div>
         </article>
 
         <!-- Dimensions & Biomes -->
@@ -200,23 +185,6 @@
           <div class="portal-btn">Explore Dimensions →</div>
         </article>
 
-        <!-- Hotkeys & Keybinds -->
-        <article class="portal-card" style="--card-accent: var(--blue);" onclick="navigateTo('hotkeys-view')">
-          <div class="portal-head">
-            <div class="portal-icon">⌨️</div>
-            <div class="portal-title-group">
-              <h3>Hotkeys & Keybinds</h3>
-              <small>Controls Quick-Sheet</small>
-            </div>
-          </div>
-          <p class="portal-desc">Essential shortcuts for JEI recipe queries (R/U), JourneyMap waypoints, Corpse death recovery GUI, and Spellbook wheels.</p>
-          <div class="portal-tags">
-            <span class="portal-tag">R / U (JEI)</span>
-            <span class="portal-tag">J / B (Map)</span>
-            <span class="portal-tag">U (Corpse)</span>
-          </div>
-          <div class="portal-btn">View Hotkey Cheat Sheet →</div>
-        </article>
       </div>
 
       <!-- Spotlight Top Items Section -->
@@ -443,110 +411,11 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- VIEW 4: MAGIC & TECH SYSTEMS               -->
+    <!-- VIEW 4: MAGIC                              -->
     <!-- ========================================== -->
-    <section id="systems-view" class="wiki-view">
-      <div class="guide-container">
-        
-        <!-- Tinkers Smeltery Deep Dive -->
-        <div class="guide-card">
-          <div class="guide-header">
-            <div class="guide-header-icon">🔥</div>
-            <div class="guide-header-text">
-              <h2>Tinkers' Construct Smeltery & Alloy Matrix</h2>
-              <p>Master multi-block metallurgy, fluid casting, and tool customization.</p>
-            </div>
-          </div>
-          
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
-            <div style="background:var(--bg); padding:16px; border-radius:var(--radius); border:1px solid var(--border);">
-              <h4 style="color:var(--lime); margin-bottom:8px;">Smeltery Construction</h4>
-              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
-                1. Build a floor of <strong>Seared Bricks/Stone</strong> (min 3x3).<br>
-                2. Form hollow walls around the floor with Seared Bricks.<br>
-                3. Place a <strong>Smeltery Controller</strong>, <strong>Seared Tank</strong> (filled with Lava), and <strong>Seared Drain</strong> facing outwards.<br>
-                4. Attach <strong>Seared Faucets</strong> to the drains over <strong>Casting Tables</strong> or <strong>Casting Basins</strong>.
-              </p>
-            </div>
-
-            <div style="background:var(--bg); padding:16px; border-radius:var(--radius); border:1px solid var(--border);">
-              <h4 style="color:var(--gold); margin-bottom:8px;">Key Alloy Recipes</h4>
-              <ul style="font-size:0.86rem; color:var(--text-muted); line-height:1.5; padding-left:16px;">
-                <li><strong>Manyullyn:</strong> 3 Molten Cobalt + 1 Molten Debris (Insatiable trait).</li>
-                <li><strong>Slimesteel:</strong> 1 Molten Iron + 1 Liquid Earth Slime + 1 Seared Stone.</li>
-                <li><strong>Rose Gold:</strong> 3 Molten Copper + 1 Molten Gold (+1 Modifier Slot).</li>
-                <li><strong>Hepatizon:</strong> 2 Molten Copper + 1 Molten Cobalt + 1 Molten Obsidian.</li>
-                <li><strong>Queens Slime:</strong> 1 Molten Cobalt + 1 Molten Gold + 1 Magma Cream.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Create Kinetic Engineering -->
-        <div class="guide-card">
-          <div class="guide-header">
-            <div class="guide-header-icon">⚙️</div>
-            <div class="guide-header-text">
-              <h2>Create: Rotational Kinematics & Automation</h2>
-              <p>Understand Stress Units (SU), Rotations Per Minute (RPM), and assembly lines.</p>
-            </div>
-          </div>
-
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
-            <div style="background:var(--bg); padding:16px; border-radius:var(--radius); border:1px solid var(--border);">
-              <h4 style="color:var(--cyan); margin-bottom:8px;">Power Generation</h4>
-              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
-                • <strong>Water Wheel:</strong> 256 SU at 8 RPM. Flow water on top and sides for max efficiency.<br>
-                • <strong>Windmill:</strong> Up to 8,192 SU based on attached Sail blocks (8 to 128 sails).<br>
-                • <strong>Steam Engine:</strong> Attach to a heated Fluid Tank (Water + Blaze Burners fed by coal or lava). Provides tens of thousands of SU!
-              </p>
-            </div>
-
-            <div style="background:var(--bg); padding:16px; border-radius:var(--radius); border:1px solid var(--border);">
-              <h4 style="color:var(--lime); margin-bottom:8px;">Speed Shifting (Gear Ratios)</h4>
-              <p style="font-size:0.86rem; color:var(--text-muted); line-height:1.5;">
-                • Connect a <strong>Large Cogwheel</strong> (driving) diagonally to a <strong>Small Cogwheel</strong> (driven) to <strong>DOUBLE the RPM</strong> (halves available torque/capacity).<br>
-                • Use a <strong>Rotation Speed Controller</strong> on a Cogwheel to dynamically set exact RPM from 1 to 256 without bulky gear chains.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Iron's Spells Magic Schools -->
-        <div class="guide-card">
-          <div class="guide-header">
-            <div class="guide-header-icon">✨</div>
-            <div class="guide-header-text">
-              <h2>Iron's Spells 'n Spellbooks: School Compendium</h2>
-              <p>Select your elemental affinity and master the casting progression.</p>
-            </div>
-          </div>
-
-          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:12px;">
-            <div style="background:rgba(231,111,81,0.1); border:1px solid var(--red); padding:12px; border-radius:var(--radius);">
-              <h4 style="color:var(--red);">🔥 Fire Magic</h4>
-              <p style="font-size:0.82rem; color:var(--text-muted);">Fireball, Wall of Fire, Blazing Dash, Magma Ball. High AoE damage and burn over time.</p>
-            </div>
-            <div style="background:rgba(83,144,217,0.1); border:1px solid var(--blue); padding:12px; border-radius:var(--radius);">
-              <h4 style="color:var(--blue);">❄️ Ice Magic</h4>
-              <p style="font-size:0.82rem; color:var(--text-muted);">Ice Shards, Frost Step, Icicle, Blizzard. Freezes enemies and inflicts frostbite slow.</p>
-            </div>
-            <div style="background:rgba(229,184,76,0.1); border:1px solid var(--gold); padding:12px; border-radius:var(--radius);">
-              <h4 style="color:var(--gold);">⚡ Lightning Magic</h4>
-              <p style="font-size:0.82rem; color:var(--text-muted);">Lightning Bolt, Chain Lightning, Charge, Ascension. Fast cast speed and multi-target chaining.</p>
-            </div>
-            <div style="background:rgba(154,212,74,0.1); border:1px solid var(--lime); padding:12px; border-radius:var(--radius);">
-              <h4 style="color:var(--lime);">✝️ Holy Magic</h4>
-              <p style="font-size:0.82rem; color:var(--text-muted);">Heal, Divine Smite, Hallow, Fortify. 200% bonus damage against undead, bosses, & Cataclysm mobs.</p>
-            </div>
-            <div style="background:rgba(179,136,235,0.1); border:1px solid var(--purple); padding:12px; border-radius:var(--radius);">
-              <h4 style="color:var(--purple);">🌌 Ender / Void Magic</h4>
-              <p style="font-size:0.82rem; color:var(--text-muted);">Teleport, Black Hole, Void Tentacles, Recall. Unrivaled mobility, enemy repositioning, and dimensional gravity.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
+    <section id="magic-view" class="wiki-view">
+      <div id="magicGuideRoot" class="magic-guide" aria-live="polite"></div>
+      <noscript><div class="guide-card">Enable JavaScript to use the interactive magic-school guide.</div></noscript>
     </section>
 
     <!-- ========================================== -->
@@ -624,88 +493,6 @@
       </div>
     </section>
 
-    <!-- ========================================== -->
-    <!-- VIEW 6: HOTKEYS & CONTROLS CHEAT SHEET     -->
-    <!-- ========================================== -->
-    <section id="hotkeys-view" class="wiki-view">
-      <div class="guide-card">
-        <div class="guide-header">
-          <div class="guide-header-icon">⌨️</div>
-          <div class="guide-header-text">
-            <h2>Essential Modpack Keybindings & Shortcuts</h2>
-            <p>Master these core keyboard shortcuts for seamless navigation, quick-crafting, and death recovery.</p>
-          </div>
-        </div>
-
-        <table class="keybind-table">
-          <thead>
-            <tr>
-              <th>Key / Shortcut</th>
-              <th>Mod System</th>
-              <th>Action & Functionality</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="kbd">R</span></td>
-              <td><strong>JEI (Just Enough Items)</strong></td>
-              <td>Hover cursor over any item and press R to view its <strong>Crafting Recipes</strong>.</td>
-            </tr>
-            <tr>
-              <td><span class="kbd">U</span></td>
-              <td><strong>JEI (Just Enough Items)</strong></td>
-              <td>Hover cursor over any item and press U to view its <strong>Uses in Recipes</strong>.</td>
-            </tr>
-            <tr>
-              <td><span class="kbd">A</span></td>
-              <td><strong>JEI (Just Enough Items)</strong></td>
-              <td>Bookmark item to the left-side quick access panel.</td>
-            </tr>
-            <tr>
-              <td><span class="kbd">J</span></td>
-              <td><strong>JourneyMap</strong></td>
-              <td>Open the <strong>Fullscreen Map</strong> with waypoint managers and biome scans.</td>
-            </tr>
-            <tr>
-              <td><span class="kbd">B</span></td>
-              <td><strong>JourneyMap</strong></td>
-              <td>Quickly create a new <strong>Waypoint</strong> at your current player coordinates.</td>
-            </tr>
-            <tr>
-              <td><span class="kbd">U</span> (World)</td>
-              <td><strong>Corpse Mod</strong></td>
-              <td>Open <strong>Death History GUI</strong> to inspect past death coordinates, dimension, and inventory.</td>
-            </tr>
-            <tr>
-              <td><span class="kbd">B</span> / <span class="kbd">Shift+B</span></td>
-              <td><strong>Sophisticated Backpacks</strong></td>
-              <td>Open equipped Curios Backpack directly without taking it off.</td>
-            </tr>
-            <tr>
-              <td><span class="kbd">C</span> / <span class="kbd">V</span></td>
-              <td><strong>Iron's Spells</strong></td>
-              <td>Cast quick-slot spells / cycle active Spellbook spell wheel.</td>
-            </tr>
-            <tr>
-              <td><span class="kbd">/</span></td>
-              <td><strong>Field Guide Wiki</strong></td>
-              <td>Focus the interactive search bar at the top of this guide!</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- ========================================== -->
-    <!-- VIEW 7: PACK CONQUEST CHECKLIST            -->
-    <!-- ========================================== -->
-    <section id="checklist-view" class="wiki-view"><div class="guide-card"><h2>Adventure checklist</h2><div id="restoredObjectives"></div></div></section>
-
-    <!-- ========================================== -->
-    <!-- VIEW 8: MOD TECHNICAL COMPENDIUM           -->
-    <!-- ========================================== -->
-    <section id="mods-view" class="wiki-view"><h2>Mod directory</h2><div id="retainedModDirectory" class="mod-grid"></div></section>
-
   </main>
 </div>
 
@@ -781,55 +568,10 @@
   </div>
 </dialog>
 
-<!-- Detailed Mod Inspection Modal -->
-<dialog id="modModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <div class="modal-title-area">
-        <div class="modal-category-tag" id="modalCatTag">Category</div>
-        <h2 id="modalModTitle">Mod Name</h2>
-      </div>
-      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">×</button>
-    </div>
-
-    <p id="modalModDesc" style="font-size:0.95rem; color:var(--text); line-height:1.6;"></p>
-
-    <div class="modal-grid-info">
-      <div class="modal-info-box">
-        <small>Mod Version</small>
-        <b id="modalModVersion">1.0.0</b>
-      </div>
-      <div class="modal-info-box">
-        <small>Pack Role</small>
-        <b id="modalModRole">Content Mod</b>
-      </div>
-      <div class="modal-info-box">
-        <small>Primary Dependency</small>
-        <b id="modalModDep">Forge / NeoForge</b>
-      </div>
-    </div>
-
-    <div class="modal-section">
-      <h4>In-Depth Wiki Overview & Mechanics</h4>
-      <div id="modalDeepDive" style="font-size:0.88rem; color:var(--text-muted); line-height:1.6; display:flex; flex-direction:column; gap:10px;"></div>
-    </div>
-
-    <div class="modal-section">
-      <h4>JAR Filename in Mods Folder</h4>
-      <div id="modalJarName" style="font-family:ui-monospace,SFMono-Regular,Consolas,monospace; font-size:0.8rem; background:var(--bg); padding:10px 14px; border-radius:var(--radius); border:1px solid var(--border); color:var(--lime);"></div>
-    </div>
-
-    <div class="modal-section">
-      <h4>Official Documentation & Links</h4>
-      <div class="modal-links-row" id="modalLinks"></div>
-    </div>
-  </div>
-</dialog>
-
-<script src="scripts/mod_directory.js"></script>
 <script src="scripts/restored-wiki.js"></script>
 <script src="scripts/progression-data.js"></script>
 <script src="scripts/progression.js"></script>
+<script src="scripts/magic.js"></script>
 
   <!-- Authentic Minecraft Floating Tooltip Container -->
   <div id="mcFloatingTooltip">

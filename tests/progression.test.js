@@ -78,9 +78,8 @@ test('first-attempt boss kits do not require their own rewards', () => {
   assert.match(guide.expeditions.find(entry => entry.id === 'nether').caution, /Crafting a Brewing Stand.*blaze rod/);
 });
 
-test('both entry points ship the same offline data and renderer with valid script order', () => {
+test('the single entry point ships offline data and renderer with valid script order', () => {
   const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-  assert.equal(html, fs.readFileSync(path.join(root, 'minecraft_modpack_wiki.html'), 'utf8'));
   for (const asset of ['assets/progression.css', 'scripts/progression-data.js', 'scripts/progression.js']) assert.ok(html.includes(asset));
   assert.ok(html.indexOf('scripts/progression-data.js') < html.indexOf('scripts/progression.js'));
   assert.ok(html.indexOf('scripts/restored-wiki.js') < html.indexOf('scripts/progression.js'));

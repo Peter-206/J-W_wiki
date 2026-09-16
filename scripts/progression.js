@@ -105,11 +105,9 @@
   }
   function modPaths() {
     const entry = data.paths.find(path => path.id === state.mod);
-    const directory = (window.WIKI_MODS || []).filter(mod => entry.directoryIds.includes(mod.id));
     return `<div class="pg-mod-picker"><label for="pg-mod-select">Choose a mod or group</label><select id="pg-mod-select">${data.paths.map(path => `<option value="${esc(path.id)}"${path.id === state.mod ? ' selected' : ''}>${esc(path.title)}</option>`).join('')}</select></div>
       <article class="pg-guide-card" id="pg-mods-${esc(entry.id)}" tabindex="-1"><p class="pg-eyebrow">Recommended starting point · Stage ${entry.stage}</p><h3>${esc(entry.title)}</h3><p class="pg-intro">${esc(entry.intro)}</p><ol class="pg-steps">${entry.steps.map(step => `<li>${esc(step)}</li>`).join('')}</ol>
-      <p class="pg-note">${esc(entry.note)}</p>${recommendations(entry.items, true)}${sources(entry.sources)}${links(entry.links, entry.stage)}
-      <div class="pg-directory-links">${directory.map(mod => `<a href="tools.html#mod/${encodeURIComponent(mod.id)}">${esc(mod.name)} directory & references →</a>`).join('')}</div></article>`;
+      <p class="pg-note">${esc(entry.note)}</p>${recommendations(entry.items, true)}${sources(entry.sources)}${links(entry.links, entry.stage)}</article>`;
   }
 
   root.innerHTML = `<header class="pg-header"><div><p class="pg-eyebrow">The field guide / Progression</p><h2>Plan your next upgrade.</h2><p>Specific gear. Useful mod paths. A reason for every recommendation.</p></div><span class="pg-version">Minecraft 1.20.1 · Forge</span></header>

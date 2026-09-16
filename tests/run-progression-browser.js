@@ -21,7 +21,7 @@ const pageId = pageOutput.match(/(\d+):.*\[selected\]/)?.[1];
 if (!pageId) throw new Error(`Cannot find test page: ${pageOutput}`);
 const reports = [];
 try {
-  for (const entry of ['index.html', 'minecraft_modpack_wiki.html']) {
+  for (const entry of ['index.html']) {
     for (const [label, width, height] of [['desktop', 1440, 1000], ['mobile', 390, 844]]) {
       run('resize_page', pageId, String(width), String(height));
       run('emulate', pageId, '--networkConditions', 'Offline', '--viewport', `${width}x${height}x1${label === 'mobile' ? ',mobile,touch' : ''}`);
@@ -33,7 +33,7 @@ try {
       if (report.status !== 'PASS') throw new Error(JSON.stringify(report));
       if (report.viewport !== width) throw new Error(`Expected ${width}px, actually tested ${report.viewport}px`);
       reports.push(report);
-      run('take_screenshot', pageId, '--filePath', path.join('tests', `progression-${entry === 'index.html' ? '' : 'alternate-'}${label}.png`));
+      run('take_screenshot', pageId, '--filePath', path.join('tests', `progression-${label}.png`));
       console.log(`${entry} / ${label}: ${report.checks} checks passed, offline`);
     }
   }

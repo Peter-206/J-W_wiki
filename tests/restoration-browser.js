@@ -3,7 +3,7 @@ window.addEventListener('load', () => {
   const check = (value, name) => { if (!value) throw Error(name); results.push(name); };
   try {
     check(jeiDatabase.length === 3030, '3030 archived items loaded');
-    for (const id of ['home','jei','progression','bosses','systems','dimensions','hotkeys','checklist','mods']) {
+    for (const id of ['home','jei','progression','bosses','magic','dimensions']) {
       navigateTo(id + '-view');
       check(document.querySelector('.wiki-view.active').id === id + '-view', 'Navigation: ' + id);
     }
@@ -38,8 +38,6 @@ window.addEventListener('load', () => {
       if (previousBookmarks === null) localStorage.removeItem('jei_bookmarks');
       else localStorage.setItem('jei_bookmarks', previousBookmarks);
     }
-    check(document.querySelectorAll('[data-quest]').length === 20, '20 selected objectives');
-    check(document.querySelectorAll('#retainedModDirectory a').length === 43, 'Retained mod directory');
     document.body.innerHTML = '<pre id="test-result">PASS\n' + results.join('\n') + '</pre>';
   } catch (error) {
     document.body.innerHTML = '<pre id="test-result">FAIL: ' + error.stack + '\n' + results.join('\n') + '</pre>';

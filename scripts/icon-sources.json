@@ -1,0 +1,1683 @@
+[
+  {
+    "id": "minecraft",
+    "name": "Minecraft",
+    "status": "verified",
+    "minecraft": "1.20.1",
+    "version": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectUrl": "https://www.minecraft.net/",
+    "source": "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json",
+    "license": {
+      "id": "Mojang",
+      "url": "https://www.minecraft.net/usage-guidelines"
+    },
+    "artifact": {
+      "url": "https://piston-data.mojang.com/v1/objects/0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838/client.jar",
+      "filename": "minecraft-1.20.1.jar",
+      "hashes": {
+        "sha1": "0c3ec587af28e5a785c0b4a7b8a30f9a8f78f838"
+      }
+    },
+    "assetNamespaces": [
+      "minecraft",
+      "realms"
+    ]
+  },
+  {
+    "id": "alexsmobs",
+    "name": "Alex's Mobs",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/alexs-mobs",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "2cMuAZAp",
+    "projectUrl": "https://modrinth.com/mod/alexs-mobs",
+    "verifiedName": "Alex's Mobs",
+    "source": "https://github.com/AlexModGuy/AlexsMobs",
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.22.9",
+    "versionId": "XoIASRVU",
+    "versionUrl": "https://modrinth.com/mod/alexs-mobs/version/XoIASRVU",
+    "artifact": {
+      "id": "pSoGEJ8T",
+      "hashes": {
+        "sha1": "dbf93d2f1da19e16739e91e8ea0fc6f4bc2f228f",
+        "sha512": "b50280057926d750f9ffbf6a8df36deb37529356895f6bf59f25d272ecf69afccec65ec1a5c3a8bfad24f9475c15b93c5ec4666447b1fce26a90c41445bbfb04"
+      },
+      "url": "https://cdn.modrinth.com/data/2cMuAZAp/versions/XoIASRVU/alexsmobs-1.22.9.jar",
+      "filename": "alexsmobs-1.22.9.jar",
+      "primary": true,
+      "size": 26350793,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "assetNamespaces": [
+      "alexsmobs"
+    ]
+  },
+  {
+    "id": "appleskin",
+    "name": "AppleSkin",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/appleskin",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "EsAfCjCV",
+    "projectUrl": "https://modrinth.com/mod/appleskin",
+    "verifiedName": "AppleSkin",
+    "source": "https://github.com/squeek502/AppleSkin",
+    "license": {
+      "id": "Unlicense",
+      "name": "The Unlicense",
+      "url": null
+    },
+    "status": "verified",
+    "version": "2.5.1+mc1.20.1",
+    "versionId": "XdXDExVF",
+    "versionUrl": "https://modrinth.com/mod/appleskin/version/XdXDExVF",
+    "artifact": {
+      "id": "ARbRIxPg",
+      "hashes": {
+        "sha512": "3176f928fb6c60d27f5edb610ca4ab0236175404eebf32797a1ec6cdd794bb294a260231579578536d03571377e43c6181adc75d8dd2c0733f17fce4f7e636b9",
+        "sha1": "81919356f84eab14258db98924b66c3c38e372b1"
+      },
+      "url": "https://cdn.modrinth.com/data/EsAfCjCV/versions/XdXDExVF/appleskin-forge-mc1.20.1-2.5.1.jar",
+      "filename": "appleskin-forge-mc1.20.1-2.5.1.jar",
+      "primary": true,
+      "size": 47428,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "balm",
+    "name": "Balm",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/balm",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "MBAkmtvl",
+    "projectUrl": "https://modrinth.com/mod/balm",
+    "verifiedName": "Balm",
+    "source": "https://github.com/TwelveIterations/Balm",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://mods.twelveiterations.com/permissions"
+    },
+    "status": "verified",
+    "version": "7.3.43+forge-1.20.1",
+    "versionId": "1VlYVa3k",
+    "versionUrl": "https://modrinth.com/mod/balm/version/1VlYVa3k",
+    "artifact": {
+      "id": "zGCGLnvI",
+      "hashes": {
+        "sha1": "4248e3b8fb20e9b6432d2225325c605f4ad7b211",
+        "sha512": "9f768f35b0e56e1aaaa0b9f690c3490e52e3ba54bf5f529742c07f93f991a4cdb6879b3630382684ebb75b8195fe1ac89d70c45d7d9397b096f014172c0f3901"
+      },
+      "url": "https://cdn.modrinth.com/data/MBAkmtvl/versions/1VlYVa3k/balm-forge-1.20.1-7.3.43.jar",
+      "filename": "balm-forge-1.20.1-7.3.43.jar",
+      "primary": true,
+      "size": 561741,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "biomesoplenty",
+    "name": "Biomes O' Plenty",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/biomes-o-plenty",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "HXF82T3G",
+    "projectUrl": "https://modrinth.com/mod/biomes-o-plenty",
+    "verifiedName": "Biomes O' Plenty",
+    "source": "https://github.com/Glitchfiend/BiomesOPlenty",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "status": "verified",
+    "version": "18.0.0.592",
+    "versionId": "zAvWfIlG",
+    "versionUrl": "https://modrinth.com/mod/biomes-o-plenty/version/zAvWfIlG",
+    "artifact": {
+      "id": "r4Zl0f9E",
+      "hashes": {
+        "sha1": "15072eb39c35a3f845d4bb04690d4b7f1808a980",
+        "sha512": "cc8aab089379484994f45224804d60bce78020880cdf595f36e0f1514d0decc4faab450ac26f304703311515aa548b75b24d339008fc0cf383b7dd0da853a9fc"
+      },
+      "url": "https://cdn.modrinth.com/data/HXF82T3G/versions/zAvWfIlG/BiomesOPlenty-1.20.1-18.0.0.592.jar",
+      "filename": "BiomesOPlenty-1.20.1-18.0.0.592.jar",
+      "primary": true,
+      "size": 21800460,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "bookshelf",
+    "name": "Bookshelf",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/bookshelf",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "uy4Cnpcm",
+    "projectUrl": "https://modrinth.com/mod/bookshelf-lib",
+    "verifiedName": "Bookshelf",
+    "source": "https://github.com/Darkhax-Minecraft/Bookshelf",
+    "license": {
+      "id": "LGPL-2.1-only",
+      "name": "GNU Lesser General Public License v2.1 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "20.2.15",
+    "versionId": "7eS5OIHj",
+    "versionUrl": "https://modrinth.com/mod/bookshelf-lib/version/7eS5OIHj",
+    "artifact": {
+      "id": "lPCKRe2J",
+      "hashes": {
+        "sha1": "9df4908f606c6dc62a358b3e04e3fdedba59a12c",
+        "sha512": "b5e3d6031ea91aca65b059c84d813d248347a870fac4811cd1e9d649f2a37c857bbd32f2f071b69589c7b3940bf5bb4bdc0b82f62818bb03255be14d23cef170"
+      },
+      "url": "https://cdn.modrinth.com/data/uy4Cnpcm/versions/7eS5OIHj/Bookshelf-Forge-1.20.1-20.2.15.jar",
+      "filename": "Bookshelf-Forge-1.20.1-20.2.15.jar",
+      "primary": true,
+      "size": 343925,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "born_in_chaos",
+    "name": "Born in Chaos",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/born-in-chaos",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "1kcHy4de",
+    "projectUrl": "https://modrinth.com/mod/borninchaos",
+    "verifiedName": "Born in Chaos",
+    "source": null,
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.7.5",
+    "versionId": "8wmEhUSt",
+    "versionUrl": "https://modrinth.com/mod/borninchaos/version/8wmEhUSt",
+    "artifact": {
+      "id": "bp4r1bAl",
+      "hashes": {
+        "sha512": "8b889b43dcbdb4882a4144d41b49f7e14f567abe24041cc9577082fa6f653795796966d203bb2870c55419ee24aaa15a743ae17dc515a33d24e60f3619f5a27f",
+        "sha1": "4d616e1ccef4c55e14b04ca63228d826f4fdda5e"
+      },
+      "url": "https://cdn.modrinth.com/data/1kcHy4de/versions/8wmEhUSt/born_in_chaos_%5BForge%5D1.20.1_1.7.5.jar",
+      "filename": "born_in_chaos_[Forge]1.20.1_1.7.5.jar",
+      "primary": true,
+      "size": 11839865,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ],
+    "assetNamespaces": [
+      "born_in_chaos_v1"
+    ]
+  },
+  {
+    "id": "bosslocator",
+    "name": "Boss Locator \u00d7 L_Ender's Cataclysm",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/boss-locator-l_enders-cataclysm",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "status": "unresolved",
+    "reason": "No matching versioned project source established; no automatic name substitution."
+  },
+  {
+    "id": "chat_heads",
+    "name": "Chat Heads",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/chat-heads",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "Wb5oqrBJ",
+    "projectUrl": "https://modrinth.com/mod/chat-heads",
+    "verifiedName": "Chat Heads",
+    "source": "https://github.com/dzwdz/chat_heads",
+    "license": {
+      "id": "MPL-2.0",
+      "name": "Mozilla Public License 2.0",
+      "url": null
+    },
+    "status": "verified",
+    "version": "0.15.7",
+    "versionId": "UJALMfLK",
+    "versionUrl": "https://modrinth.com/mod/chat-heads/version/UJALMfLK",
+    "artifact": {
+      "id": "P4yK3I5l",
+      "hashes": {
+        "sha1": "80582e413216eb014d83252b05c731a4a151fe9b",
+        "sha512": "e5e063b25986c67d1c9493d767803efc31cb94f02adb70ff95942b49d740f30802099ab8a1998727903b2f34ff4f18e311d1b7af36d27b92c94d465dd8314c10"
+      },
+      "url": "https://cdn.modrinth.com/data/Wb5oqrBJ/versions/UJALMfLK/chat_heads-0.15.7-forge-1.20.jar",
+      "filename": "chat_heads-0.15.7-forge-1.20.jar",
+      "primary": true,
+      "size": 724902,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "citadel",
+    "name": "Citadel",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/citadel",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "jJfV67b1",
+    "projectUrl": "https://modrinth.com/mod/citadel",
+    "verifiedName": "Citadel",
+    "source": "https://github.com/Alex-the-666/Citadel",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "2.6.3",
+    "versionId": "lTAAe4sZ",
+    "versionUrl": "https://modrinth.com/mod/citadel/version/lTAAe4sZ",
+    "artifact": {
+      "id": "uvURsDjO",
+      "hashes": {
+        "sha512": "42e3fa0ddefb1ebdbba4242d81caede834cd0bbd96e4e90b12b2157a5b07c68b625f64046de1f9e1ad4d6056d3536e17207be5f4b24960582052d713b13f22c0",
+        "sha1": "fb0b1fa96ce28e4be77b38ad95d83c3da7ec8316"
+      },
+      "url": "https://cdn.modrinth.com/data/jJfV67b1/versions/lTAAe4sZ/citadel-2.6.3-1.20.1.jar",
+      "filename": "citadel-2.6.3-1.20.1.jar",
+      "primary": true,
+      "size": 3185275,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ]
+  },
+  {
+    "id": "clumps",
+    "name": "Clumps",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/clumps",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "Wnxd13zP",
+    "projectUrl": "https://modrinth.com/mod/clumps",
+    "verifiedName": "Clumps",
+    "source": "https://github.com/jaredlll08/Clumps",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "status": "verified",
+    "version": "12.0.0.4",
+    "versionId": "nAHGB5ls",
+    "versionUrl": "https://modrinth.com/mod/clumps/version/nAHGB5ls",
+    "artifact": {
+      "id": "escWHafq",
+      "hashes": {
+        "sha512": "ffd8ff2438e9f9d260d3926ccdd0cccc4772c6f99f29715690aed4f6e97a76035f3aeaa78168e2a458bc4cccf521e97ebdb6e0b61c819facb04af9ebb3638383",
+        "sha1": "8809c7aa6c71389e9c59abfe5def52c1cb8d4f1c"
+      },
+      "url": "https://cdn.modrinth.com/data/Wnxd13zP/versions/nAHGB5ls/Clumps-forge-1.20.1-12.0.0.4.jar",
+      "filename": "Clumps-forge-1.20.1-12.0.0.4.jar",
+      "primary": true,
+      "size": 20300,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "coroutil",
+    "name": "CoroUtil",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/coroutil",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "rLLJ1OZM",
+    "projectUrl": "https://modrinth.com/mod/coroutil",
+    "verifiedName": "CoroUtil",
+    "source": null,
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.20.1-1.3.7",
+    "versionId": "6rPDKAT8",
+    "versionUrl": "https://modrinth.com/mod/coroutil/version/6rPDKAT8",
+    "artifact": {
+      "id": "3NZVEqNw",
+      "hashes": {
+        "sha1": "7f5f0b62a638b6053c95919cbe8c2bea2e0c93d0",
+        "sha512": "37a13eaa68579dd45204ebdfa43b2909123a2e5e875a2ca51da0d0882d4c524be1e95fce4bb26db21901b7d100ad9363968814e3566d44b5afce8fb8e8088057"
+      },
+      "url": "https://cdn.modrinth.com/data/rLLJ1OZM/versions/6rPDKAT8/coroutil-forge-1.20.1-1.3.7.jar",
+      "filename": "coroutil-forge-1.20.1-1.3.7.jar",
+      "primary": true,
+      "size": 64187,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ]
+  },
+  {
+    "id": "corpse",
+    "name": "Corpse",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/corpse",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "WrpuIfhw",
+    "projectUrl": "https://modrinth.com/mod/corpse",
+    "verifiedName": "Corpse",
+    "source": "https://github.com/henkelmax/corpse",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "status": "verified",
+    "version": "forge-1.20.1-1.0.23",
+    "versionId": "7fc0hJN6",
+    "versionUrl": "https://modrinth.com/mod/corpse/version/7fc0hJN6",
+    "artifact": {
+      "id": "jbMUxYmW",
+      "hashes": {
+        "sha512": "c9ddf7d243aac2cbf88fc2fd7e71ce4470354765d602dadf0fa68105a0561cb14b482c60d9e04084845bcf2237442d913888dcfb45b392bc700b0f3470517c96",
+        "sha1": "78a776f057588a84a86c57dbe376b9b26f69f2c4"
+      },
+      "url": "https://cdn.modrinth.com/data/WrpuIfhw/versions/7fc0hJN6/corpse-forge-1.20.1-1.0.23.jar",
+      "filename": "corpse-forge-1.20.1-1.0.23.jar",
+      "primary": true,
+      "size": 245643,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "create",
+    "name": "Create",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/create",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "LNytGWDc",
+    "projectUrl": "https://modrinth.com/mod/create",
+    "verifiedName": "Create",
+    "source": "https://github.com/Creators-of-Create/Create",
+    "license": {
+      "id": "LicenseRef-Create-Mod-License",
+      "name": "",
+      "url": "https://github.com/Creators-of-Create/Create/blob/HEAD/LICENSE.md"
+    },
+    "status": "verified",
+    "version": "mc1.20.1-6.0.8",
+    "versionId": "8amzvn9x",
+    "versionUrl": "https://modrinth.com/mod/create/version/8amzvn9x",
+    "artifact": {
+      "id": "WyoEI6Wi",
+      "hashes": {
+        "sha512": "5b51f5d31437d9bfbf221b67459abd87260d284874e1e23b7ed1d522b23a48059a3b1d2c1c541428da35dc6be15561b4f3c7f36aac6df3a0e8db6a278f6b0316",
+        "sha1": "b13d912b9247a38d66d11598c121442585a1c1e9"
+      },
+      "url": "https://cdn.modrinth.com/data/LNytGWDc/versions/8amzvn9x/create-1.20.1-6.0.8.jar",
+      "filename": "create-1.20.1-6.0.8.jar",
+      "primary": true,
+      "size": 19170905,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "assetNamespaces": [
+      "create",
+      "minecraft"
+    ]
+  },
+  {
+    "id": "curios",
+    "name": "Curios API",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/curios",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "vvuO3ImH",
+    "projectUrl": "https://modrinth.com/mod/curios",
+    "verifiedName": "Curios API",
+    "source": "https://github.com/TheIllusiveC4/Curios",
+    "license": {
+      "id": "LGPL-3.0-or-later",
+      "name": "GNU Lesser General Public License v3.0 or later",
+      "url": null
+    },
+    "status": "verified",
+    "version": "5.14.1+1.20.1",
+    "versionId": "IPQlZkz1",
+    "versionUrl": "https://modrinth.com/mod/curios/version/IPQlZkz1",
+    "artifact": {
+      "id": "GysXk2hT",
+      "hashes": {
+        "sha512": "1373f95fd111c977db2f6adcef8e4eb486a2d926a3e17374692dee4ac3d65857de6446c16922b531aa5ace2c23c666a7fcc28c720b2917c1e04808d15648ba87",
+        "sha1": "452175b95ad3db6ff58bb8968f6bf7a9d1e0f480"
+      },
+      "url": "https://cdn.modrinth.com/data/vvuO3ImH/versions/IPQlZkz1/curios-forge-5.14.1%2B1.20.1.jar",
+      "filename": "curios-forge-5.14.1+1.20.1.jar",
+      "primary": true,
+      "size": 398066,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ]
+  },
+  {
+    "id": "deeperdarker",
+    "name": "Deeper and Darker",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/deeperdarker",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "fnAffV0n",
+    "projectUrl": "https://modrinth.com/mod/deeperdarker",
+    "verifiedName": "Deeper and Darker",
+    "source": "https://github.com/KyaniteMods/DeeperAndDarker",
+    "license": {
+      "id": "AGPL-3.0-only",
+      "name": "GNU Affero General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.3.3-forge+1.20.1",
+    "versionId": "e2oirgc2",
+    "versionUrl": "https://modrinth.com/mod/deeperdarker/version/e2oirgc2",
+    "artifact": {
+      "id": "1HoVdnhS",
+      "hashes": {
+        "sha512": "fcf08e2d1bfb0bf40120f426826b25e6d483a83cf7f04d221798bcc8cb46cedb9065dc5c0d33213f5c708cebd0081aba4ca7265fcd96c76b16d2f99bd4297aae",
+        "sha1": "12f95fa85c62123140d1962702a97a3bb746bbf5"
+      },
+      "url": "https://cdn.modrinth.com/data/fnAffV0n/versions/e2oirgc2/deeperdarker-forge-1.20.1-1.3.3.jar",
+      "filename": "deeperdarker-forge-1.20.1-1.3.3.jar",
+      "primary": true,
+      "size": 17844266,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ],
+    "assetNamespaces": [
+      "deeperdarker",
+      "minecraft"
+    ]
+  },
+  {
+    "id": "embeddium",
+    "name": "Embeddium",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/embeddium",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "sk9rgfiA",
+    "projectUrl": "https://modrinth.com/mod/embeddium",
+    "verifiedName": "Embeddium",
+    "source": "https://github.com/FiniteReality/embeddium",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "0.3.31+mc1.20.1",
+    "versionId": "UTbfe5d1",
+    "versionUrl": "https://modrinth.com/mod/embeddium/version/UTbfe5d1",
+    "artifact": {
+      "id": "ap13BApr",
+      "hashes": {
+        "sha1": "bb2fa8f3e493af16af9160d049f96c614a1faf2f",
+        "sha512": "ffbf2da4685260a4d5c14c621708bd20722563f084f042d3dfb0a7b87f048e39299648c854a93939129da0d23a15a91ec628560d601e76074b08e275f6e132e9"
+      },
+      "url": "https://cdn.modrinth.com/data/sk9rgfiA/versions/UTbfe5d1/embeddium-0.3.31%2Bmc1.20.1.jar",
+      "filename": "embeddium-0.3.31+mc1.20.1.jar",
+      "primary": true,
+      "size": 1320675,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ]
+  },
+  {
+    "id": "embers_floating_islands",
+    "name": "Ember's Floating Islands",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/embers-floating-islands",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "Ii9sVXDo",
+    "projectUrl": "https://modrinth.com/mod/embers-floating-islands",
+    "verifiedName": "Ember's Floating Islands",
+    "source": null,
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.5.3",
+    "versionId": "FrweTX8x",
+    "versionUrl": "https://modrinth.com/mod/embers-floating-islands/version/FrweTX8x",
+    "artifact": {
+      "id": "ERTLMgQu",
+      "hashes": {
+        "sha1": "295b25b2a903bcb150cb1a3839b3e478fce8a909",
+        "sha512": "9dc9a833bbac623c7dc12cdcd15e6ac0a8f44eeb58681eb118f39e6670a9139df859bf7622aa250991877f2953e56eb14792dd29928e1d2b8978570c7c4e0767"
+      },
+      "url": "https://cdn.modrinth.com/data/Ii9sVXDo/versions/FrweTX8x/floating_islands-1.5.3.jar",
+      "filename": "floating_islands-1.5.3.jar",
+      "primary": true,
+      "size": 407717,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "enchantmentdescriptions",
+    "name": "Enchantment Descriptions",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/enchantment-descriptions",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "UVtY3ZAC",
+    "projectUrl": "https://modrinth.com/mod/enchantment-descriptions",
+    "verifiedName": "Enchantment Descriptions",
+    "source": "https://github.com/Darkhax-Minecraft/Enchantment-Descriptions",
+    "license": {
+      "id": "LGPL-2.1-only",
+      "name": "GNU Lesser General Public License v2.1 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "17.1.21",
+    "versionId": "OPgBRfTQ",
+    "versionUrl": "https://modrinth.com/mod/enchantment-descriptions/version/OPgBRfTQ",
+    "artifact": {
+      "id": "gH7LmTwN",
+      "hashes": {
+        "sha1": "0328a8350cf0a6d1c44265367a077649088b354b",
+        "sha512": "5581f7d706809f079bb1847637c8ce8f9abbf0102c647960b54908e0080387702fdaedb31c87ec1e30f729051e3f7194d6ca33e3016a033bc794981b492def5e"
+      },
+      "url": "https://cdn.modrinth.com/data/UVtY3ZAC/versions/OPgBRfTQ/EnchantmentDescriptions-Forge-1.20.1-17.1.21.jar",
+      "filename": "EnchantmentDescriptions-Forge-1.20.1-17.1.21.jar",
+      "primary": true,
+      "size": 66883,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "farmersdelight",
+    "name": "Farmer's Delight",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/farmers-delight",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "R2OftAxM",
+    "projectUrl": "https://modrinth.com/mod/farmers-delight",
+    "verifiedName": "Farmer's Delight",
+    "source": "https://github.com/vectorwing/FarmersDelight",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.20.1-1.3.4",
+    "versionId": "SiIpcZzM",
+    "versionUrl": "https://modrinth.com/mod/farmers-delight/version/SiIpcZzM",
+    "artifact": {
+      "id": "9r3ldcvK",
+      "hashes": {
+        "sha1": "26f615fd35f652021f5b0f1cba68afa7d578fe15",
+        "sha512": "932ae0ab95fa0755bb5a79fbf1d1e31d0e86f3c0f5186796ed06973a3019a618ee8c66a4eae5b901909aed6232abb2bd3b1ff0e1905f74fc70644fada94a80b5"
+      },
+      "url": "https://cdn.modrinth.com/data/R2OftAxM/versions/SiIpcZzM/FarmersDelight-1.20.1-1.3.4.jar",
+      "filename": "FarmersDelight-1.20.1-1.3.4.jar",
+      "primary": true,
+      "size": 3311051,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "assetNamespaces": [
+      "emi",
+      "farmersdelight"
+    ]
+  },
+  {
+    "id": "hexerei",
+    "name": "Hexerei",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/hexerei",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "IQSOHVhI",
+    "projectUrl": "https://modrinth.com/mod/hexerei",
+    "verifiedName": "Hexerei",
+    "source": "https://github.com/JoeFoxe/Hexerei-1.19",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "0.4.2.2",
+    "versionId": "1DZLciOu",
+    "versionUrl": "https://modrinth.com/mod/hexerei/version/1DZLciOu",
+    "artifact": {
+      "id": "Wo0XXc4H",
+      "hashes": {
+        "sha1": "b8ae064ccfbdefa12718f97ae80e220ff6801ed5",
+        "sha512": "9336279528ed66975d174fa9d5bf547f67be27930a1069fd9e7f441593f73af1ad111e663dbb4d696ef1a4852fb2f8a633c91396849a70c55ac75286a16708bf"
+      },
+      "url": "https://cdn.modrinth.com/data/IQSOHVhI/versions/1DZLciOu/hexerei-0.4.2.2.jar",
+      "filename": "hexerei-0.4.2.2.jar",
+      "primary": true,
+      "size": 11376755,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "assetNamespaces": [
+      "hexerei"
+    ]
+  },
+  {
+    "id": "iceandfire",
+    "name": "Ice and Fire: Dragons",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/ice-and-fire-dragons",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "LVnvHVBp",
+    "projectUrl": "https://modrinth.com/mod/ice-and-fire-dragons",
+    "verifiedName": "Ice and Fire",
+    "source": "https://github.com/AlexModGuy/Ice_and_Fire",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "2.1.13-1.20.1-beta-5",
+    "versionId": "EzN8KQYF",
+    "versionUrl": "https://modrinth.com/mod/ice-and-fire-dragons/version/EzN8KQYF",
+    "artifact": {
+      "id": "TlwxsZ5r",
+      "hashes": {
+        "sha512": "9e3559efccfb898a1f96c16910c07d26bafa730603a335db04df5a1ef511bd2e60b6bbb788c12aa80b12c8ffd8228e7eddf840f90f356577bfd0e439e24eb4f1",
+        "sha1": "7e828cbb046ca3d622e92c68f956bd1c0155dc6f"
+      },
+      "url": "https://cdn.modrinth.com/data/LVnvHVBp/versions/EzN8KQYF/iceandfire-2.1.13-1.20.1-beta-5.jar",
+      "filename": "iceandfire-2.1.13-1.20.1-beta-5.jar",
+      "primary": true,
+      "size": 21854126,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "assetNamespaces": [
+      "iceandfire",
+      "minecraft"
+    ]
+  },
+  {
+    "id": "dragonseeker",
+    "name": "Ice and Fire: Dragonseeker",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/dragonseeker",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "status": "unresolved",
+    "reason": "No matching versioned project source established; no automatic name substitution."
+  },
+  {
+    "id": "inventorysorter",
+    "name": "Inventory Sorter",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/inventory-sorter",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "status": "identity-verified",
+    "reason": "CurseForge identifies cpw as author. The similarly named Modrinth project is different; 1.20.1 release not pinned.",
+    "source": "https://github.com/cpw/inventorysorter"
+  },
+  {
+    "id": "irons_lib",
+    "name": "Iron's Lib",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/irons-lib",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "9nfaJPtX",
+    "projectUrl": "https://modrinth.com/mod/irons-lib",
+    "verifiedName": "Iron's Lib",
+    "source": null,
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.20.1-2.1.0",
+    "versionId": "DbpRfa2k",
+    "versionUrl": "https://modrinth.com/mod/irons-lib/version/DbpRfa2k",
+    "artifact": {
+      "id": "QAvNr3gu",
+      "hashes": {
+        "sha512": "160a442442c32c16a6aaf79dd42b9e75132176cbb5475a81f7bf152c5beb8cd8a2f7f20048bfcbf34a5d7a213ec2215caee76fbd2b2903919aaf4240892eaf77",
+        "sha1": "c2fa494d679ac912f8fb52ed6f832c1f3817401c"
+      },
+      "url": "https://cdn.modrinth.com/data/9nfaJPtX/versions/DbpRfa2k/irons_lib-1.20.1-2.1.0.jar",
+      "filename": "irons_lib-1.20.1-2.1.0.jar",
+      "primary": true,
+      "size": 428969,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "irons_spellbooks",
+    "name": "Iron's Spells 'n Spellbooks",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/irons-spells-n-spellbooks",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "s4OWxYQQ",
+    "projectUrl": "https://modrinth.com/mod/irons-spells-n-spellbooks",
+    "verifiedName": "Iron's Spells 'n Spellbooks",
+    "source": "https://github.com/iron431/Irons-Spells-n-Spellbooks",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://github.com/iron431/Irons-Spells-n-Spellbooks#readme"
+    },
+    "status": "verified",
+    "version": "1.20.1-3.16.3",
+    "versionId": "hZaEegS9",
+    "versionUrl": "https://modrinth.com/mod/irons-spells-n-spellbooks/version/hZaEegS9",
+    "artifact": {
+      "id": "bCLi2Svz",
+      "hashes": {
+        "sha512": "a699631fa56568d39a30773b8fe96d7a49f1cd7f8e243340ce7ad91b09ccf49c9a6802a944f4bd04b2d88d9fc796a70add1d18d8f326bb2be238b02a8c8076da",
+        "sha1": "726345aa215756bd30b7cf8c338c9ae6bbc59799"
+      },
+      "url": "https://cdn.modrinth.com/data/s4OWxYQQ/versions/hZaEegS9/irons_spellbooks-1.20.1-3.16.3.jar",
+      "filename": "irons_spellbooks-1.20.1-3.16.3.jar",
+      "primary": true,
+      "size": 15570397,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ],
+    "assetNamespaces": [
+      "apotheosis",
+      "curios",
+      "irons_spellbooks",
+      "minecraft"
+    ]
+  },
+  {
+    "id": "journeymap",
+    "name": "JourneyMap",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/journeymap",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "lfHFW1mp",
+    "projectUrl": "https://modrinth.com/mod/journeymap",
+    "verifiedName": "JourneyMap",
+    "source": "https://github.com/TeamJM/journeymap",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.20.1-6.0.5+forge",
+    "versionId": "3pOseiLA",
+    "versionUrl": "https://modrinth.com/mod/journeymap/version/3pOseiLA",
+    "artifact": {
+      "id": "SCdS1wEp",
+      "hashes": {
+        "sha512": "aee203332a92b56305ccafcabaaaa4faa15dc2c743b89c0fd3ce014b22a970b8dc61724f628e5ae53df98408e0553ca5a6a5d5f20ce03f171eabc3d132f28c56",
+        "sha1": "a9fde70199b09c60f51a3b3e91ef782d8ad6897a"
+      },
+      "url": "https://cdn.modrinth.com/data/lfHFW1mp/versions/3pOseiLA/journeymap-forge-1.20.1-6.0.5.jar",
+      "filename": "journeymap-forge-1.20.1-6.0.5.jar",
+      "primary": true,
+      "size": 4331916,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "cataclysm",
+    "name": "L_Ender's Cataclysm",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/lendercataclysm",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "46KJle7n",
+    "projectUrl": "https://modrinth.com/mod/l_enders-cataclysm",
+    "verifiedName": "L_Ender's Cataclysm",
+    "source": "https://github.com/lender544/new1.20.1/tree/master",
+    "license": {
+      "id": "CC-BY-NC-ND-4.0",
+      "name": "Creative Commons Attribution Non Commercial No Derivatives 4.0 International",
+      "url": null
+    },
+    "status": "verified",
+    "version": "3.31",
+    "versionId": "C3H0azzB",
+    "versionUrl": "https://modrinth.com/mod/l_enders-cataclysm/version/C3H0azzB",
+    "artifact": {
+      "id": "L8xzO2Tf",
+      "hashes": {
+        "sha1": "4f1165cb39521292e826b471b4808bb89f0f4f3f",
+        "sha512": "0dccedd79e3e555f5a38075612d91aec23e1f6ca674e7637ea88c669095b44554385abb75826dfa5a0170585c6b3c3b6d9465bed049c0186d80f75d88f45c5e8"
+      },
+      "url": "https://cdn.modrinth.com/data/46KJle7n/versions/C3H0azzB/L_Enders_Cataclysm-3.31.jar",
+      "filename": "L_Enders_Cataclysm-3.31.jar",
+      "primary": true,
+      "size": 73916104,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ],
+    "assetNamespaces": [
+      "cataclysm",
+      "minecraft"
+    ]
+  },
+  {
+    "id": "lionfish_api",
+    "name": "Lionfish API",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/lionfish-api",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "FoVacERa",
+    "projectUrl": "https://modrinth.com/mod/lionfish-api",
+    "verifiedName": "Lionfish-API",
+    "source": "https://github.com/lender544/Lionfish-API",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "3.0",
+    "versionId": "CPftDBcY",
+    "versionUrl": "https://modrinth.com/mod/lionfish-api/version/CPftDBcY",
+    "artifact": {
+      "id": "9oKytVQa",
+      "hashes": {
+        "sha512": "a7cf6c9bf27a77b45efe434a166f9c99efdb6db14e5d88ce8417c6364aea9d250a9f43627e9e0ac162e106517fccf51cebb5035852c8449fb7fb299a083770c4",
+        "sha1": "79d0404f87fa066480b18c844c1e0b1c5f5475f9"
+      },
+      "url": "https://cdn.modrinth.com/data/FoVacERa/versions/CPftDBcY/lionfishapi-3.0.jar",
+      "filename": "lionfishapi-3.0.jar",
+      "primary": true,
+      "size": 101931,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "lithostitched",
+    "name": "Lithostitched",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/lithostitched",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "XaDC71GB",
+    "projectUrl": "https://modrinth.com/mod/lithostitched",
+    "verifiedName": "Lithostitched",
+    "source": "https://github.com/Apollounknowndev/lithostitched/",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.4.11-forge-1.20",
+    "versionId": "srPoHKt8",
+    "versionUrl": "https://modrinth.com/mod/lithostitched/version/srPoHKt8",
+    "artifact": {
+      "id": "aVisDWND",
+      "hashes": {
+        "sha1": "d1a755de84ee5d8910ff1e65e815473056e93ece",
+        "sha512": "4e50a0fb4f054b429803cb20fc0820011b12098ebca1f17b1b0634cab832369e08446901d5e97fd35b01e99cf6066d20a16cc673c5b7bc8196568b3db67128c2"
+      },
+      "url": "https://cdn.modrinth.com/data/XaDC71GB/versions/srPoHKt8/lithostitched-forge-1.20.1-1.4.11.jar",
+      "filename": "lithostitched-forge-1.20.1-1.4.11.jar",
+      "primary": true,
+      "size": 476347,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "mantle",
+    "name": "Mantle",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/mantle",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "Cg6Uc79H",
+    "projectUrl": "https://modrinth.com/mod/mantle",
+    "verifiedName": "Mantle",
+    "source": "https://github.com/SlimeKnights/Mantle",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.11.104",
+    "versionId": "SOJzuYxC",
+    "versionUrl": "https://modrinth.com/mod/mantle/version/SOJzuYxC",
+    "artifact": {
+      "id": "7bqtSCPQ",
+      "hashes": {
+        "sha1": "8a3f948f8c505ee92dae915ec0a1593594eb2667",
+        "sha512": "4b05eb01769d3cc299dbfc94c2d4f8d76192e839b53bf83109dd5e72d0dae67f188ffcdefb4683b073fc78fc19e86d84e04023f6ad7542e628817fabacf6db78"
+      },
+      "url": "https://cdn.modrinth.com/data/Cg6Uc79H/versions/SOJzuYxC/Mantle-1.20.1-1.11.104.jar",
+      "filename": "Mantle-1.20.1-1.11.104.jar",
+      "primary": true,
+      "size": 1625005,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ]
+  },
+  {
+    "id": "mcqoy",
+    "name": "McQoy",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/mcqoy",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "tNmWwdI2",
+    "projectUrl": "https://modrinth.com/mod/mcqoy",
+    "verifiedName": "McQoy",
+    "source": "https://github.com/sisby-folk/mcqoy",
+    "license": {
+      "id": "LicenseRef-EUPL-1.2",
+      "name": "",
+      "url": "https://github.com/sisby-folk/mcqoy/blob/main/LICENSE"
+    },
+    "status": "verified",
+    "version": "0.4.1+forge-1.20",
+    "versionId": "ovT7XMOW",
+    "versionUrl": "https://modrinth.com/mod/mcqoy/version/ovT7XMOW",
+    "artifact": {
+      "id": "rkH51Dq4",
+      "hashes": {
+        "sha1": "3146950f631a45f73772d73f5ba4b3bcde07344b",
+        "sha512": "3f1e1fe399e1d6916f06070d09c025edf321755989183b68aaf6c5c5f1c4e3e5305e39729e89d4c8364c2210cf5cef9adedd48d7954f4facb8b4462b55f8c6a8"
+      },
+      "url": "https://cdn.modrinth.com/data/tNmWwdI2/versions/ovT7XMOW/mcqoy-0.4.1%2Bforge-1.20.jar",
+      "filename": "mcqoy-0.4.1+forge-1.20.jar",
+      "primary": true,
+      "size": 310916,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ]
+  },
+  {
+    "id": "modernfix",
+    "name": "ModernFix",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/modernfix",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "nmDcB62a",
+    "projectUrl": "https://modrinth.com/mod/modernfix",
+    "verifiedName": "ModernFix",
+    "source": "https://github.com/embeddedt/ModernFix",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "5.27.83+mc1.20.1",
+    "versionId": "jAZ7Ge3d",
+    "versionUrl": "https://modrinth.com/mod/modernfix/version/jAZ7Ge3d",
+    "artifact": {
+      "id": "22VuCZyg",
+      "hashes": {
+        "sha512": "2987d43ab991c31c94e53d16fe0694dd29a405fc7cdf6be69f5bf5b3d6a06a5d1b82ba8f5d8ecb4df45e592c649e39bc69787caa62b3417b5548392793be6e55",
+        "sha1": "24109106b51846d387aa00c06d1445c35410c31c"
+      },
+      "url": "https://cdn.modrinth.com/data/nmDcB62a/versions/jAZ7Ge3d/modernfix-forge-5.27.83%2Bmc1.20.1.jar",
+      "filename": "modernfix-forge-5.27.83+mc1.20.1.jar",
+      "primary": true,
+      "size": 1003230,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "moogs_soaring_structures",
+    "name": "Moog's Soaring Structures",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/moogs-soaring-structures",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "status": "unresolved",
+    "reason": "No matching versioned project source established; no automatic name substitution."
+  },
+  {
+    "id": "moogs_structure_lib",
+    "name": "Moog's Structure Lib",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/moogs-structure-lib",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "1oUDhxuy",
+    "projectUrl": "https://modrinth.com/mod/moogs-structure-lib",
+    "verifiedName": "Moog's Structure Lib (moogs_structures)",
+    "source": "https://github.com/FinnSetchell/MoogsStructureLib/",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "3.1.2",
+    "versionId": "vgUSSHYA",
+    "versionUrl": "https://modrinth.com/mod/moogs-structure-lib/version/vgUSSHYA",
+    "artifact": {
+      "id": "RaVSMJln",
+      "hashes": {
+        "sha512": "d6915bebc5a8e947a3279e132e8daf43837809463bb60598ac86a318b1b889c12cc511810d7ffcb43cec58ddffae3aee73fc6b5dabe128ae0ad119a87e6c314a",
+        "sha1": "ff78033e8b2594d4a5083c25927f8ed2569438ed"
+      },
+      "url": "https://cdn.modrinth.com/data/1oUDhxuy/versions/vgUSSHYA/MoogsStructureLib-forge-1.20-3.1.2.jar",
+      "filename": "MoogsStructureLib-forge-1.20-3.1.2.jar",
+      "primary": true,
+      "size": 418707,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "oculus",
+    "name": "Oculus",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/oculus",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "GchcoXML",
+    "projectUrl": "https://modrinth.com/mod/oculus",
+    "verifiedName": "Oculus",
+    "source": "https://github.com/Asek3/Oculus",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.20.1-1.8.0",
+    "versionId": "iQ1SwGc3",
+    "versionUrl": "https://modrinth.com/mod/oculus/version/iQ1SwGc3",
+    "artifact": {
+      "id": "7aacZyV2",
+      "hashes": {
+        "sha1": "984f774e71790deaec674c7587bd24e0711871b2",
+        "sha512": "1bb4ac77400d6684347988ed298a692c2cb15cf7923693607eb8739b171a20fef7412259e9e157111d9ce21779badab386029956f7d2283a9e611722a373e9d5"
+      },
+      "url": "https://cdn.modrinth.com/data/GchcoXML/versions/iQ1SwGc3/oculus-mc1.20.1-1.8.0.jar",
+      "filename": "oculus-mc1.20.1-1.8.0.jar",
+      "primary": true,
+      "size": 2851119,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ]
+  },
+  {
+    "id": "playeranimator",
+    "name": "playerAnimator",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/playeranimator",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "gedNE4y2",
+    "projectUrl": "https://modrinth.com/mod/playeranimator",
+    "verifiedName": "playerAnimator",
+    "source": "https://github.com/KosmX/fabricPlayerAnimation",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.0.2-rc1+1.20-forge",
+    "versionId": "xe2EVE6q",
+    "versionUrl": "https://modrinth.com/mod/playeranimator/version/xe2EVE6q",
+    "artifact": {
+      "id": "zO7j5ZkA",
+      "hashes": {
+        "sha1": "16808f94a41d45d8e986b4e4ea6b02ba57fa058a",
+        "sha512": "cb9f6a3aaa943823a85fdd716ddb3c7623af2b3520926c3a98d170c52d31908894808fb61c52bea39bae622dbab59d50b4bad56f7ca0533a9c3350d412c33729"
+      },
+      "url": "https://cdn.modrinth.com/data/gedNE4y2/versions/xe2EVE6q/player-animation-lib-forge-1.0.2-rc1%2B1.20.jar",
+      "filename": "player-animation-lib-forge-1.0.2-rc1+1.20.jar",
+      "primary": true,
+      "size": 181437,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "skinlayers3d",
+    "name": "Skin Layers 3D",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/skin-layers-3d",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "zV5r3pPn",
+    "projectUrl": "https://modrinth.com/mod/3dskinlayers",
+    "verifiedName": "3D Skin Layers",
+    "source": "https://github.com/tr7zw/3d-skin-layers",
+    "license": {
+      "id": "LicenseRef-tr7zw-Protective-License",
+      "name": "",
+      "url": "https://github.com/tr7zw/3d-Skin-Layers/blob/1.17/LICENSE"
+    },
+    "status": "verified",
+    "version": "1.11.2",
+    "versionId": "4oWvC9eo",
+    "versionUrl": "https://modrinth.com/mod/3dskinlayers/version/4oWvC9eo",
+    "artifact": {
+      "id": "sjPaLhsy",
+      "hashes": {
+        "sha512": "87f06a52665d5eec7cf7d9dcd73a94ba9aa2d0f1651578d3852afab128e17836cff76e40aa5661915ba106910cef0104a00ef04883977af74de1acc02bcecc1d",
+        "sha1": "473b49e775f4c9dd746929f20c33f8132b86f235"
+      },
+      "url": "https://cdn.modrinth.com/data/zV5r3pPn/versions/4oWvC9eo/skinlayers3d-forge-1.11.2-mc1.20.1.jar",
+      "filename": "skinlayers3d-forge-1.11.2-mc1.20.1.jar",
+      "primary": true,
+      "size": 2168901,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "so_many_enchants",
+    "name": "So Many Enchants",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/so-many-enchants",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "status": "unresolved",
+    "reason": "No matching versioned project source established; no automatic name substitution."
+  },
+  {
+    "id": "sophisticatedbackpacks",
+    "name": "Sophisticated Backpacks",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/sophisticated-backpacks",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "TyCTlI4b",
+    "projectUrl": "https://modrinth.com/mod/sophisticated-backpacks",
+    "verifiedName": "Sophisticated Backpacks",
+    "source": "https://github.com/P3pp3rF1y/SophisticatedBackpacks",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.20.1-3.26.3.2157",
+    "versionId": "XxOZuQnU",
+    "versionUrl": "https://modrinth.com/mod/sophisticated-backpacks/version/XxOZuQnU",
+    "artifact": {
+      "id": "yYub4QHe",
+      "hashes": {
+        "sha512": "f10871313c1e4afbb3a8afb0a45a6cab3eb7112ba9c2a2cfc9952be462d298f19fcadb932250a5c6720ec85ffa2e560d0217d437849b816fb669df2093777c33",
+        "sha1": "efc831296f60a59792af142534d1c6dd1dff7f3f"
+      },
+      "url": "https://cdn.modrinth.com/data/TyCTlI4b/versions/XxOZuQnU/sophisticatedbackpacks-1.20.1-3.26.3.2157.jar",
+      "filename": "sophisticatedbackpacks-1.20.1-3.26.3.2157.jar",
+      "primary": true,
+      "size": 1223451,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "assetNamespaces": [
+      "sophisticatedbackpacks"
+    ]
+  },
+  {
+    "id": "sophisticatedcore",
+    "name": "Sophisticated Core",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/sophisticated-core",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "nmoqTijg",
+    "projectUrl": "https://modrinth.com/mod/sophisticated-core",
+    "verifiedName": "Sophisticated Core",
+    "source": "https://github.com/P3pp3rF1y/SophisticatedCore",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.20.1-1.5.1.2335",
+    "versionId": "1Xl7lP0L",
+    "versionUrl": "https://modrinth.com/mod/sophisticated-core/version/1Xl7lP0L",
+    "artifact": {
+      "id": "vmbaOHco",
+      "hashes": {
+        "sha1": "24d7f2ee72127b7f1148245e57979e87b0b189ec",
+        "sha512": "365df5bce186f421ab09cca7f427b7faba4456b04ff6cf274a1e56275e4eca7fc190786e04ceea00f3ee92cefb4b0f72817f3c1edbf397b580210f6f12dd17fb"
+      },
+      "url": "https://cdn.modrinth.com/data/nmoqTijg/versions/1Xl7lP0L/sophisticatedcore-1.20.1-1.5.1.2335.jar",
+      "filename": "sophisticatedcore-1.20.1-1.5.1.2335.jar",
+      "primary": true,
+      "size": 1734797,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ]
+  },
+  {
+    "id": "sound_physics",
+    "name": "Sound Physics Remastered",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/sound-physics-remastered",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "qyVF9oeo",
+    "projectUrl": "https://modrinth.com/mod/sound-physics-remastered",
+    "verifiedName": "Sound Physics Remastered",
+    "source": "https://github.com/henkelmax/sound-physics-remastered",
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "forge-1.20.1-1.5.1",
+    "versionId": "x0sJ9PeR",
+    "versionUrl": "https://modrinth.com/mod/sound-physics-remastered/version/x0sJ9PeR",
+    "artifact": {
+      "id": "Ctr6XRxu",
+      "hashes": {
+        "sha1": "944b4673bcab118f411d050b2cd6b693262bb664",
+        "sha512": "5509a7b51ec1d57aae2af0a0200bda474539fcfe28303f3ff0158ba95b8e7a88ae023d8a9bd97d4626a6a8ce809506e19cdcb05b76e8be5bf8a0450c5d6a46b1"
+      },
+      "url": "https://cdn.modrinth.com/data/qyVF9oeo/versions/x0sJ9PeR/sound-physics-remastered-forge-1.20.1-1.5.1.jar",
+      "filename": "sound-physics-remastered-forge-1.20.1-1.5.1.jar",
+      "primary": true,
+      "size": 206984,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "terrablender",
+    "name": "TerraBlender",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/terrablender",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "kkmrDlKT",
+    "projectUrl": "https://modrinth.com/mod/terrablender",
+    "verifiedName": "TerraBlender",
+    "source": "https://github.com/Glitchfiend/TerraBlender/",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": "https://github.com/Glitchfiend/TerraBlender/blob/TB-1.19.3-2.1.x/LICENSE"
+    },
+    "status": "verified",
+    "version": "3.0.1.10",
+    "versionId": "zGconCHG",
+    "versionUrl": "https://modrinth.com/mod/terrablender/version/zGconCHG",
+    "artifact": {
+      "id": "D5DFqyhb",
+      "hashes": {
+        "sha512": "69b819eb021032561626cf436635c31dced45baae6ef9f21d95690e1e57c55914dc72a43a4ccd0a3337cd32e89ff592056be8dc6b7bd12842438500a157a6275",
+        "sha1": "b3dbaf1aac31601b9efb19e4c67646750041968a"
+      },
+      "url": "https://cdn.modrinth.com/data/kkmrDlKT/versions/zGconCHG/TerraBlender-forge-1.20.1-3.0.1.10.jar",
+      "filename": "TerraBlender-forge-1.20.1-3.0.1.10.jar",
+      "primary": true,
+      "size": 107533,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "terralith",
+    "name": "Terralith",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/terralith",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "8oi3bsk5",
+    "projectUrl": "https://modrinth.com/mod/terralith",
+    "verifiedName": "Terralith",
+    "source": "https://github.com/Stardust-Labs-MC/Terralith",
+    "license": {
+      "id": "LicenseRef-Stardust-Labs-License",
+      "name": "",
+      "url": "https://github.com/Stardust-Labs-MC/license/blob/main/license.txt"
+    },
+    "status": "verified",
+    "version": "2.5.4",
+    "versionId": "WeYhEb5d",
+    "versionUrl": "https://modrinth.com/mod/terralith/version/WeYhEb5d",
+    "artifact": {
+      "id": "yiGKzGuD",
+      "hashes": {
+        "sha1": "79e1409b8db4ce86df9d6d6730f09c4bd8860a30",
+        "sha512": "885e171d8b34aae7e142f082d0364285ec5a8e8342f11c60d341f7a94083d5a42c4e30612fe4f9f64d57b484396a3dff3a224e2a2497d4ced8d22f2ad6cd561d"
+      },
+      "url": "https://cdn.modrinth.com/data/8oi3bsk5/versions/WeYhEb5d/Terralith_1.20.x_v2.5.4.jar",
+      "filename": "Terralith_1.20.x_v2.5.4.jar",
+      "primary": true,
+      "size": 3156901,
+      "file_type": null
+    },
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge",
+      "quilt"
+    ]
+  },
+  {
+    "id": "aether",
+    "name": "The Aether",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/aether",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "YhmgMVyu",
+    "projectUrl": "https://modrinth.com/mod/aether",
+    "verifiedName": "The Aether",
+    "source": "https://github.com/The-Aether-Team/The-Aether",
+    "license": {
+      "id": "LicenseRef-Custom",
+      "name": "",
+      "url": "https://github.com/The-Aether-Team/The-Aether#scroll-license-information"
+    },
+    "status": "verified",
+    "version": "1.20.1-1.5.2-neoforge",
+    "versionId": "2411kUqF",
+    "versionUrl": "https://modrinth.com/mod/aether/version/2411kUqF",
+    "artifact": {
+      "id": "ok5hOknp",
+      "hashes": {
+        "sha512": "60b23e439b244645eafda5f3ddd620ac37e94bd75441d2deea9c328e1e154362f48b08aff1959849a7428ae7664422723fdbdb12aaeddfd56409ba4b54a7eaaf",
+        "sha1": "e2fdd161f35ca1b6db774906e88e266d7f12eab6"
+      },
+      "url": "https://cdn.modrinth.com/data/YhmgMVyu/versions/2411kUqF/aether-1.20.1-1.5.2-neoforge.jar",
+      "filename": "aether-1.20.1-1.5.2-neoforge.jar",
+      "primary": true,
+      "size": 39746073,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "assetNamespaces": [
+      "aether",
+      "minecraft"
+    ]
+  },
+  {
+    "id": "tconstruct",
+    "name": "Tinkers' Construct",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/tinkers-construct",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "rxIIYO6c",
+    "projectUrl": "https://modrinth.com/mod/tinkers-construct",
+    "verifiedName": "Tinkers' Construct",
+    "source": "https://github.com/SlimeKnights/TinkersConstruct",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "status": "verified",
+    "version": "3.11.2.166",
+    "versionId": "kJ9LD194",
+    "versionUrl": "https://modrinth.com/mod/tinkers-construct/version/kJ9LD194",
+    "artifact": {
+      "id": "iWVX2B4P",
+      "hashes": {
+        "sha1": "94d07ec0ff45c49f5908beff7acb9fbec43fdde5",
+        "sha512": "69da7399162b4de18b3eedf701f6013727ec4ae14b1b746265513bea6c4e88ad64ccb1187d3abca2387aafd37a91c21c56ce9b6fa7b0c26df17dfc1ac8d6a916"
+      },
+      "url": "https://cdn.modrinth.com/data/rxIIYO6c/versions/kJ9LD194/TConstruct-1.20.1-3.11.2.166.jar",
+      "filename": "TConstruct-1.20.1-3.11.2.166.jar",
+      "primary": true,
+      "size": 21572031,
+      "file_type": null
+    },
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "assetNamespaces": [
+      "minecraft",
+      "tconstruct",
+      "trimmed"
+    ]
+  },
+  {
+    "id": "waystones",
+    "name": "Waystones",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/waystones",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "LOpKHB2A",
+    "projectUrl": "https://modrinth.com/mod/waystones",
+    "verifiedName": "Waystones",
+    "source": "https://github.com/TwelveIterations/Waystones",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": "https://mods.twelveiterations.com/permissions"
+    },
+    "status": "verified",
+    "version": "14.1.21+forge-1.20.1",
+    "versionId": "Y0IgdaoP",
+    "versionUrl": "https://modrinth.com/mod/waystones/version/Y0IgdaoP",
+    "artifact": {
+      "id": "jv5qPLqn",
+      "hashes": {
+        "sha512": "3798eef2f81c2f6066d9dc2dc22bbe9d1c4b62d5aa494c592ffe67ee7f4fb8021361505b3c0b1358d4f9af27e50b1f12d29afb3b4b0b362b5ab227e8be171047",
+        "sha1": "61952fb248a9689fe46d5ffb223fcc41e31fef1a"
+      },
+      "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/Y0IgdaoP/waystones-forge-1.20.1-14.1.21.jar",
+      "filename": "waystones-forge-1.20.1-14.1.21.jar",
+      "primary": true,
+      "size": 536782,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ],
+    "assetNamespaces": [
+      "minecraft",
+      "waystones"
+    ]
+  },
+  {
+    "id": "yacl",
+    "name": "YetAnotherConfigLib",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/yacl",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "1eAoo2KR",
+    "projectUrl": "https://modrinth.com/mod/yacl",
+    "verifiedName": "YetAnotherConfigLib (YACL)",
+    "source": "https://github.com/isXander/YetAnotherConfigLib",
+    "license": {
+      "id": "LGPL-3.0-or-later",
+      "name": "GNU Lesser General Public License v3.0 or later",
+      "url": null
+    },
+    "status": "verified",
+    "version": "3.6.6+1.20.1-forge",
+    "versionId": "sCWgXDYQ",
+    "versionUrl": "https://modrinth.com/mod/yacl/version/sCWgXDYQ",
+    "artifact": {
+      "id": "lFlFOhNU",
+      "hashes": {
+        "sha512": "7fdd923ae94c1ada9bf0524f21cdfbb4f870ea93b26d02f369829585892fc5a2f61e60f43a6686ee611ff11bde8f123f178279e2de453c8fb320264153a0e8d9",
+        "sha1": "644731e321c53a35a0b3177a3cc6347fe38002f4"
+      },
+      "url": "https://cdn.modrinth.com/data/1eAoo2KR/versions/sCWgXDYQ/yet_another_config_lib_v3-3.6.6%2B1.20.1-forge.jar",
+      "filename": "yet_another_config_lib_v3-3.6.6+1.20.1-forge.jar",
+      "primary": true,
+      "size": 1105891,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "yungsapi",
+    "name": "YUNG's API",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/yungs-api",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "Ua7DFN59",
+    "projectUrl": "https://modrinth.com/mod/yungs-api",
+    "verifiedName": "YUNG's API",
+    "source": "https://github.com/YUNG-GANG/YUNGs-API",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.20-Forge-4.0.6",
+    "versionId": "PJOYAmAs",
+    "versionUrl": "https://modrinth.com/mod/yungs-api/version/PJOYAmAs",
+    "artifact": {
+      "id": "i3C7x3NM",
+      "hashes": {
+        "sha1": "af584b690f5646c6032002b58abc4591beed3833",
+        "sha512": "7d83d94a90e55a712f6508485c044ff202916e9b9b9166b75177cb8f2eb919543bbbe1547d11c41cfd4763820f934235f47c0b26dd9e89bc1030954afa9fb889"
+      },
+      "url": "https://cdn.modrinth.com/data/Ua7DFN59/versions/PJOYAmAs/YungsApi-1.20-Forge-4.0.6.jar",
+      "filename": "YungsApi-1.20-Forge-4.0.6.jar",
+      "primary": true,
+      "size": 370524,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  },
+  {
+    "id": "yungsbetterdungeons",
+    "name": "YUNG's Better Dungeons",
+    "url": "https://www.curseforge.com/minecraft/mc-mods/yungs-better-dungeons",
+    "minecraft": "1.20.1",
+    "reviewed": "2026-09-15",
+    "projectId": "o1C1Dkj5",
+    "projectUrl": "https://modrinth.com/mod/yungs-better-dungeons",
+    "verifiedName": "YUNG's Better Dungeons",
+    "source": "https://github.com/YUNG-GANG/YUNGs-Better-Dungeons",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "status": "verified",
+    "version": "1.20-Forge-4.0.4",
+    "versionId": "kPiQ6v4q",
+    "versionUrl": "https://modrinth.com/mod/yungs-better-dungeons/version/kPiQ6v4q",
+    "artifact": {
+      "id": "20GJ2A86",
+      "hashes": {
+        "sha1": "67a9e1c2ff126ab54cea8e0709d178915243039e",
+        "sha512": "56bd11a7aca3bacb908381a668af8f5b574c5557c21370ace783d637c949802187110a4f5dc26afae4d9af74cdf64cee81d59fac3513a9bec3f921193fc938b8"
+      },
+      "url": "https://cdn.modrinth.com/data/o1C1Dkj5/versions/kPiQ6v4q/YungsBetterDungeons-1.20-Forge-4.0.4.jar",
+      "filename": "YungsBetterDungeons-1.20-Forge-4.0.4.jar",
+      "primary": true,
+      "size": 792381,
+      "file_type": null
+    },
+    "loaders": [
+      "forge"
+    ]
+  }
+]

@@ -5,7 +5,7 @@ module.exports = async function progressionBrowserChecks() {
   const results = [];
   function check(condition, message) { if (!condition) throw new Error(message); results.push(message); }
   const root = document.getElementById('progression-guide');
-  const saved = ['jei_bookmarks', 'field-guide-v2', ...Object.keys(localStorage).filter(key => key.startsWith('check_q_'))].map(key => [key, localStorage.getItem(key)]);
+  const saved = ['jei_bookmarks'].map(key => [key, localStorage.getItem(key)]);
   const tab = name => root.querySelector(`#pg-tab-${name}`);
   const panel = () => root.querySelector('[role="tabpanel"]:not([hidden])');
   const chooseStage = stage => panel().querySelector(`[data-pg-stage="${stage}"]`).click();
